@@ -1,0 +1,59 @@
+import { Avatar, Button, Dropdown, Layout, type MenuProps } from "antd";
+import { Link } from "react-router";
+import { UserOutlined } from "@ant-design/icons";
+import { logout } from "@/service/auth/auth.service";
+import { useAuthStore } from "@/store/auth.store";
+
+type headerProps = {
+  bg: string;
+};
+
+const dropdownItems: MenuProps["items"] = [
+  {
+    label: <Link to="/information">Thông tin cá nhân </Link>,
+    key: "0",
+  },
+  {
+    type: "divider",
+  },
+  {
+    label: "Đăng xuất",
+    key: "3",
+    onClick: () => logout(),
+  },
+];
+
+const Header = ({ bg}: headerProps) => {
+  const Header = Layout;
+    const { currentUser,userInfo} = useAuthStore();
+  
+  return (
+    <Header
+      className="fixed h-[64px] top-0 left-[200] right-0 z-20"
+      style={{ padding: 0, background: bg }}
+    >
+      <div className="relative pr-4 h-full flex items-center justify-end ">
+        {currentUser ? (
+          <Dropdown
+            menu={{ items: dropdownItems }}
+            trigger={["click"]}
+            placement="bottom"
+          >
+            <div className="flex items-center cursor-pointer border h-full rounded-md p-3">
+              <Avatar size="large" icon={<UserOutlined />} />
+              <div className="name m-3"> {userInfo?.fullname}</div>
+            </div>
+          </Dropdown>
+        ) : (
+          <Link to="/login">
+            <Button className="bg-blue-400 font-bold text-xl" size="large">
+              Đăng nhập
+            </Button>
+          </Link>
+        )}
+      </div>
+    </Header>
+  );
+};
+
+export default Header;

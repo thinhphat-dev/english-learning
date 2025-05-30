@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Hiện tại đơn",
+    "tense": "Present Simple",
+    "structure": {
+      "affirmative": "S + V(s/es)",
+      "negative": "S + do/does + not + V",
+      "question": "Do/Does + S + V?"
+    },
+    "signalWords": ["always", "usually", "often", "sometimes", "rarely", "never", "every day", "every week", "on Mondays", "in the morning"],
+    "examples": [ { "type": "affirmative", "sentence": "She goes to school every day." },
+      { "type": "negative", "sentence": "She does not go to school on Sunday." },
+      { "type": "question", "sentence": "Does she go to school?" }]
+  },
+  {
+    "name": "Hiện tại tiếp diễn",
+    "tense": "Present Continuous",
+    "structure": {
+      "affirmative": "S + am/is/are + V-ing",
+      "negative": "S + am/is/are + not + V-ing",
+      "question": "Am/Is/Are + S + V-ing?"
+    },
+    "signalWords": ["now", "right now", "at the moment", "at present", "look!", "listen!"],
+    "examples": [ { "type": "affirmative", "sentence": "I am studying English now." },
+      { "type": "negative", "sentence": "I am not studying English now." },
+      { "type": "question", "sentence": "Are you studying English?" }]
+  },
+  {
+    "name": "Hiện tại hoàn thành",
+    "tense": "Present Perfect",
+    "structure": {
+      "affirmative": "S + have/has + V3",
+      "negative": "S + have/has + not + V3",
+      "question": "Have/Has + S + V3?"
+    },
+    "signalWords": ["just", "already", "yet", "ever", "never", "since", "for", "recently", "lately", "so far", "up to now"],
+    "examples": [ { "type": "affirmative", "sentence": "She has finished her homework." },
+      { "type": "negative", "sentence": "She has not finished her homework." },
+      { "type": "question", "sentence": "Has she finished her homework?" }]
+  },
+  {
+    "name": "Hiện tại hoàn thành tiếp diễn",
+    "tense": "Present Perfect Continuous",
+    "structure": {
+      "affirmative": "S + have/has + been + V-ing",
+      "negative": "S + have/has + not + been + V-ing",
+      "question": "Have/Has + S + been + V-ing?"
+    },
+    "signalWords": ["for", "since", "lately", "recently", "all day", "all morning", "how long"],
+    "examples": [  { "type": "affirmative", "sentence": "She has been working all day." },
+      { "type": "negative", "sentence": "She has not been working all day." },
+      { "type": "question", "sentence": "Has she been working all day?" }]
+  },
+  {
+    "name": "Quá khứ đơn",
+    "tense": "Past Simple",
+    "structure": {
+      "affirmative": "S + V2",
+      "negative": "S + did not + V",
+      "question": "Did + S + V?"
+    },
+    "signalWords": ["yesterday", "last night", "last week", "in 1990", "ago", "when I was a child"],
+    "examples": [  { "type": "affirmative", "sentence": "He visited his grandparents last weekend." },
+      { "type": "negative", "sentence": "He did not visit his grandparents." },
+      { "type": "question", "sentence": "Did he visit his grandparents?" }]
+  },
+  {
+    "name": "Quá khứ tiếp diễn",
+    "tense": "Past Continuous",
+    "structure": {
+      "affirmative": "S + was/were + V-ing",
+      "negative": "S + was/were + not + V-ing",
+      "question": "Was/Were + S + V-ing?"
+    },
+    "signalWords": ["while", "when", "at that moment", "at 8 o’clock last night", "all evening"],
+    "examples": [   { "type": "affirmative", "sentence": "They were watching TV at 8 p.m." },
+      { "type": "negative", "sentence": "They were not watching TV at 8 p.m." },
+      { "type": "question", "sentence": "Were they watching TV?" }]
+  },
+  {
+    "name": "Quá khứ hoàn thành",
+    "tense": "Past Perfect",
+    "structure": {
+      "affirmative": "S + had + V3",
+      "negative": "S + had + not + V3",
+      "question": "Had + S + V3?"
+    },
+    "signalWords": ["before", "after", "by the time", "when", "already", "just"],
+    "examples": [{ "type": "affirmative", "sentence": "He had left before I arrived." },
+      { "type": "negative", "sentence": "He had not left before I arrived." },
+      { "type": "question", "sentence": "Had he left before you arrived?" }]
+  },
+  {
+    "name": "Quá khứ hoàn thành tiếp diễn",
+    "tense": "Past Perfect Continuous",
+    "structure": {
+      "affirmative": "S + had been + V-ing",
+      "negative": "S + had not been + V-ing",
+      "question": "Had + S + been + V-ing?"
+    },
+    "signalWords": ["for", "since", "all day", "all morning", "before"],
+    "examples": [   { "type": "affirmative", "sentence": "I had been working for 3 hours before lunch." },
+      { "type": "negative", "sentence": "I had not been working for 3 hours." },
+      { "type": "question", "sentence": "Had you been working for 3 hours?" }]
+  },
+  {
+    "name": "Tương lai đơn",
+    "tense": "Future Simple",
+    "structure": {
+      "affirmative": "S + will + V",
+      "negative": "S + will not + V",
+      "question": "Will + S + V?"
+    },
+    "signalWords": ["tomorrow", "next week", "in the future", "soon", "later", "in 2025"],
+    "examples": [  { "type": "affirmative", "sentence": "I will call you tomorrow." },
+      { "type": "negative", "sentence": "I will not call you tomorrow." },
+      { "type": "question", "sentence": "Will you call me?" }]
+  },
+  {
+    "name": "Tương lai tiếp diễn",
+    "tense": "Future Continuous",
+    "structure": {
+      "affirmative": "S + will be + V-ing",
+      "negative": "S + will not be + V-ing",
+      "question": "Will + S + be + V-ing?"
+    },
+    "signalWords": ["at this time tomorrow", "at 5 p.m. next Monday", "soon", "in the near future"],
+    "examples": [     { "type": "affirmative", "sentence": "She will be studying at 9 a.m." },
+      { "type": "negative", "sentence": "She will not be studying at 9 a.m." },
+      { "type": "question", "sentence": "Will she be studying at 9 a.m.?" }]
+  },
+  {
+    "name": "Tương lai hoàn thành",
+    "tense": "Future Perfect",
+    "structure": {
+      "affirmative": "S + will have + V3",
+      "negative": "S + will not have + V3",
+      "question": "Will + S + have + V3?"
+    },
+    "signalWords": ["by", "by the time", "before", "until", "till"],
+    "examples": [ { "type": "affirmative", "sentence": "They will have finished the report by Monday." },
+      { "type": "negative", "sentence": "They will not have finished the report by Monday." },
+      { "type": "question", "sentence": "Will they have finished the report?" }]
+  },
+  {
+    "name": "Tương lai hoàn thành tiếp diễn",
+    "tense": "Future Perfect Continuous",
+    "structure": {
+      "affirmative": "S + will have been + V-ing",
+      "negative": "S + will not have been + V-ing",
+      "question": "Will + S + have been + V-ing?"
+    },
+    "signalWords": ["for", "by the time", "before", "until", "since"],
+    "examples": [ { "type": "affirmative", "sentence": "He will have been working here for 5 years next month." },
+      { "type": "negative", "sentence": "He will not have been working here for 5 years." },
+      { "type": "question", "sentence": "Will he have been working here for 5 years?" }]
+  }
+]
