@@ -1,9 +1,9 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { useEffect } from 'react';
-import { auth, db } from '@/config/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { auth } from '@/config/firebase';
 import { useAuthStore } from '@/store/auth.store';
 import type { ReactNode } from 'react';
+import { fetchUserData } from '@/service/auth/auth.service';
 import type { UserInfo } from '@/types/response.type';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -14,10 +14,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setCurrentUser(user);
       if (user) {
         try {
-          const docSnap = await getDoc(doc(db, 'users', user.uid));
-          if (docSnap.exists()) {
-            setUserInfo(docSnap.data() as UserInfo);
-          }
+          const userInfo: UserInfo = await fetchUserData(user.uid);
+          setUserInfo(userInfo);
         } catch (err) {
           console.error('Lỗi lấy thông tin user:', err);
         }
@@ -26,9 +24,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
       setLoading(false);
     });
-
     return () => unsubscribe();
   }, []);
-
   return <>{children}</>;
 };

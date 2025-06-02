@@ -1,105 +1,52 @@
-import { Button, Form, Input, Select } from 'antd';
-import { Link, useNavigate } from 'react-router';
+import { Button } from 'antd';
+import { Link } from 'react-router';
 import AuthForm from '@/components/auth/AuthForm';
-import { LevelEnum } from '@/enum/level.enum';
 import { register } from '@/service/auth/auth.service';
 import type { RegisterParams } from '@/types/request.type';
+import { TextInput } from '@/components/form/TextInput';
+import { dataOptionLevel } from '@/constans/database/optionLevel';
+import { PasswordInput } from '@/components/form/PasswordInput';
+import { SelectInput } from '@/components/form/SelectInput';
+import { LevelEnum } from '@/enum/level.enum';
+import {
+  getConfirmPasswordSchema,
+  getEmailSchema,
+  getFullNameSchema,
+  getLevelSchema,
+  getPasswordSchema,
+} from '@/schema/Form.Schema';
 
 const RegisterPage = () => {
-    const navigate = useNavigate(); 
-
   const handleRegister = (values: RegisterParams) => {
-    register(values, navigate); 
+    register(values);
   };
 
   return (
     <AuthForm onFinish={handleRegister}>
-      <Form.Item
-        label='Họ Và Tên'
-        name='fullname'
-        rules={[
-          { required: true, message: 'Vui lòng nhập họ và tên!' },
-          {
-            min: 6,
-            message: 'Tên phải dài hơn 6 ký tự!',
-          },
-        ]}
-        hasFeedback>
-        <Input placeholder='Nhập họ và tên' />
-      </Form.Item>
-
-      <Form.Item
-        label='Email'
-        name='email'
-        hasFeedback
-        rules={[
-          { required: true, message: 'Vui lòng nhập email!' },
-          {
-            type: 'email',
-            message: 'Email không hợp lệ!',
-          },
-        ]}>
-        <Input placeholder='Nhập email' />
-      </Form.Item>
-
-      <Form.Item
+      <TextInput formItemName='fullname' label='Họ Và Tên' placeholder='Nhập họ và tên' rules={getFullNameSchema} hasFeedback />
+      <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' rules={getEmailSchema} />
+      <SelectInput
         label='Bạn Đang Là'
-        name='level'
-        rules={[
-          {
-            required: true,
-            message: 'Vui lòng chọn nghề nghiệp hiện tại!',
-          },
-        ]}
-        initialValue='NEWBIE'>
-        <Select placeholder='Trình Độ Hiện Tại'>
-          {Object.entries(LevelEnum).map(([value, label]) => (
-            <Select.Option key={value} value={value}>
-              {label}
-            </Select.Option>
-          ))}
-        </Select>
-      </Form.Item>
-
-      <Form.Item
-        hasFeedback
-        label='Mật Khẩu'
-        name='password'
-        rules={[
-          { required: true, message: 'Vui lòng nhập mật khẩu!' },
-          {
-            min: 6,
-            message: 'Mật khẩu phải dài hơn 6 ký tự',
-          },
-        ]}>
-        <Input.Password placeholder='Nhập mật khẩu' />
-      </Form.Item>
-
-      <Form.Item
+        formItemName='level'
+        rules={getLevelSchema}
+        initialValue={LevelEnum.NEWBIE}
+        placeholder='Trình Độ Hiện Tại'
+        options={dataOptionLevel}
+      />
+      <PasswordInput hasFeedback label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordSchema} />
+      <PasswordInput
         hasFeedback
         label='Nhập Lại Mật Khẩu'
-        name='confirmPassword'
+        formItemName='confirmPassword'
         dependencies={['password']}
-        rules={[
-          { required: true, message: 'Vui lòng nhập lại mật khẩu!' },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('Mật khẩu không khớp!'));
-            },
-          }),
-        ]}>
-        <Input.Password placeholder='Nhập lại mật khẩu' />
-      </Form.Item>
-
+        placeholder='Nhập lại mật khẩu'
+        rules={getConfirmPasswordSchema}
+      />
       <Button className='w-full text-base font-medium' type='primary' htmlType='submit'>
         Đăng Ký
       </Button>
       <div className='w-full flex justify-end pt-2'>
-        Đã có tài khoản?
-        <Link to='/login'>Đăng nhập</Link>
+        Đã có tài khoản? <Link to='/login'>Đăng nhập</Link>
       </div>
     </AuthForm>
   );

@@ -1,28 +1,16 @@
-import { Button, Form, Input } from 'antd';
-import { Link, useNavigate } from 'react-router';
+import { Button } from 'antd';
+import { Link } from 'react-router';
 import AuthForm from '@/components/auth/AuthForm';
 import { loginWithPassword } from '@/service/auth/auth.service';
-import { useEffect } from 'react';
-import { useAuthStore } from '@/store/auth.store';
-import { PATH } from '@/config/routers/path';
+import { TextInput } from '@/components/form/TextInput';
+import { PasswordInput } from '@/components/form/PasswordInput';
+import { getEmailSchema, getPasswordSchema } from '@/schema/Form.Schema';
 
 const LoginPage = () => {
-  const { currentUser } = useAuthStore();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (currentUser) {
-      navigate(PATH.HOME.PATH);
-    }
-  }, [currentUser, navigate]);
-
   return (
     <AuthForm onFinish={loginWithPassword}>
-      <Form.Item label='Email' name='email' rules={[{ required: true, message: 'Vui lòng nhập email!' }]}>
-        <Input placeholder='Nhập email' />
-      </Form.Item>
-      <Form.Item label='Mật Khẩu' name='password' rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}>
-        <Input.Password placeholder='Nhập mật khẩu' />
-      </Form.Item>
+      <TextInput formItemName='email' label='Email' placeholder='Nhập email' rules={getEmailSchema} />
+      <PasswordInput label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordSchema} />
       <div className='w-full mt-[-20px] flex justify-end pb-2'>
         <a href='#'>Quên Mật Khẩu?</a>
       </div>

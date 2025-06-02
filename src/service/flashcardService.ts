@@ -1,6 +1,5 @@
 import { auth, db } from '@/config/firebase';
-import { collection, addDoc } from 'firebase/firestore';
-
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 export interface FlashcardData {
   word: string;
   meaning: string;
@@ -17,4 +16,9 @@ export const saveFlashcard = async (data: FlashcardData): Promise<void> => {
     ...data,
     createdAt: data.createdAt || new Date(),
   });
+};
+
+export const fetchFlashcards = async (uid: string): Promise<FlashcardData[]> => {
+  const snapshot = await getDocs(collection(db, 'flashcards', uid, 'items'));
+  return snapshot.docs.map((doc) => doc.data() as FlashcardData);
 };

@@ -5,7 +5,9 @@ const Home = () => {
   if (loading) return <div>Đang tải...</div>;
   return (
     <div>
-      {currentUser ? (
+      {loading ? (
+        <div>Đang tải...</div>
+      ) : currentUser ? (
         <div>
           Đã đăng nhập:{' '}
           <div>

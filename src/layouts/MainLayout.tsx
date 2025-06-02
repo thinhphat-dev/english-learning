@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Outlet } from 'react-router';
 
 const { Content } = Layout;
-const Home = () => {
+
+const MainLayout = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -14,22 +15,18 @@ const Home = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div style={{ minHeight: '100vh', maxHeight: '100vh' }}>
-      <Layout style={{ height: '100vh', overflow: 'hidden' }}>
+    <div className='min-h-screen max-h-screen'>
+      <Layout className='h-screen overflow-hidden'>
         <Sider collapsed={collapsed} setCollapsed={setCollapsed} />
         <Layout>
-          <Header bg={colorBgContainer}></Header>
-          <Content
-            className={`overflow-auto transition-all duration-300 ${collapsed ? 'ml-[80px]' : 'ml-[224px]'} mt-[64px]`}
-            style={{
-              height: 'calc(100vh - 64px - 50px)',
-              overflow: 'auto',
-            }}>
+          <Header bg={colorBgContainer} />
+          <Content className={`overflow-auto transition-all duration-300 ${collapsed ? 'ml-[80px]' : 'ml-[224px]'} mt-[80px]`}>
             <div
+              className='p-6'
               style={{
-                padding: 24,
                 background: colorBgContainer,
                 borderRadius: borderRadiusLG,
+                height: 'calc(100vh - 64px - 50px)',
               }}>
               <Outlet />
             </div>
@@ -41,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MainLayout;
