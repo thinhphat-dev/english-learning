@@ -43,7 +43,7 @@ const DictionaryLookup = () => {
 
   return (
     <div className='max-w-3xl mx-auto mt-[-20px] p-4'>
-      <Title level={3}>Từ Điển</Title>
+      <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>Từ Điển</Title>
       <div className='flex justify-center items-center mb-4'>
         <Search
           size='large'
@@ -59,7 +59,7 @@ const DictionaryLookup = () => {
       {isError && <p className='text-red-500'>Không tìm thấy từ hoặc lỗi kết nối.</p>}
 
       {data && (
-        <Card title={data.wordData.word} className='shadow-xl w-full rounded-2xl mb-10'>
+        <Card title={data.wordData.word} className='shadow-even w-full rounded-2xl mb-10'>
           {data.mean && (
             <div className='bg-green-100 p-3 rounded mb-4'>
               <p className='font-semibold'>Nghĩa tiếng Việt:</p>

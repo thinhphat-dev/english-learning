@@ -19,13 +19,11 @@ const MainLayout = () => {
   } = theme.useToken();
 
   return (
-    <div className='min-h-screen max-h-screen'>
-      <Layout className='h-screen overflow-hidden'>
+    <div className='min-h-screen max-h-screen '>
+      <Layout className='h-screen bg-zinc-200 '>
         {!isMobile && <CSider collapsed={collapsed} setCollapsed={setCollapsed} />}
-
         <div className='fixed top-0 left-0 right-0 z-50'>
           <CHeader bg={colorBgContainer} />
-
           {isMobile && (
             <Button
               icon={<MenuOutlined />}
@@ -47,13 +45,12 @@ const MainLayout = () => {
         </Drawer>
 
         <Content
-          className={`overflow-auto transition-all duration-300 ${
+          className={`overflow-auto transition-all h-[650px] mb-[50px] duration-300 ${
             !isMobile ? (collapsed ? 'ml-[80px]' : 'ml-[224px]') : ''
           } mt-[80px]`}>
           <div
-            className='p-6'
+            className='p-6  max-h-[650px] '
             style={{
-              background: colorBgContainer,
               borderRadius: borderRadiusLG,
               height: 'calc(100vh - 64px - 50px)',
             }}>

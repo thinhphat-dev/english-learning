@@ -16,13 +16,14 @@ export const loginWithPassword = async (values: LoginParams) => {
 };
 
 export const register = async (values: RegisterParams) => {
-  const { email, password, fullname, level } = values;
+  const { email, password, fullname, gender, level } = values;
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     await setDoc(doc(db, 'users', user.uid), {
       email,
       fullname,
+      gender,
       level,
       createdAt: serverTimestamp(),
     });
@@ -50,6 +51,7 @@ export const fetchUserData = async (uid: string): Promise<UserInfo> => {
     return {
       fullname: data.fullname || '',
       email: data.email || '',
+      gender: data.gender || '',
       level: data.level || 'NEWBIE',
     };
   } else {

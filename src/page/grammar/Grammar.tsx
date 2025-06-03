@@ -41,6 +41,9 @@ export default function GrammarPage() {
 
   return (
     <div className='space-y-6 p-4 '>
+      <Title className='flex items-center justify-center' level={2} style={{ color: '#0b1b5d' }}>
+        Ngữ Pháp Tiếng Anh
+      </Title>
       <div className='flex flex-col md:flex-row gap-4'>
         <Select
           placeholder='Loại ngữ pháp'
@@ -69,9 +72,10 @@ export default function GrammarPage() {
         )}
       </div>
       {filteredTense && (
-        <Card className='mt-6 shadow-md'>
+        <Card className='mt-6 shadow-even '>
           <Title level={3}>
-            {filteredTense.name} ( <span className='text-c-main-color'>{filteredTense.tense}</span> )
+            {filteredTense.name}
+            <span className='block sm:inline text-c-main-color'> ( {filteredTense.tense} )</span>
           </Title>
           <div className='flex flex-col gap-6 mt-4'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-4'>
@@ -142,7 +146,7 @@ export default function GrammarPage() {
                 ))}
               </Paragraph>
               {filteredTense.signalWords && filteredTense.signalWords.length > 0 && (
-                <div className='mt-[-10px] mb-10'>
+                <div className='mt-[-10px]'>
                   <Divider variant='dashed' dashed className='custom-divider-color'>
                     <div className='text-c-sec-color font-bold'>Từ khóa nhận biết</div>
                   </Divider>

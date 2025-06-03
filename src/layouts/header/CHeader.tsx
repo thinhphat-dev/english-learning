@@ -35,8 +35,8 @@ const CHeader = ({ bg }: headerProps) => {
   const { currentUser, userInfo } = useAuthStore();
 
   return (
-    <Header className='fixed h-[64px] top-0 left-[200] right-0 z-20' style={{ padding: 0, background: bg }}>
-      <div className='relative pr-4 h-full flex items-center justify-end '>
+    <Header className='fixed h-[64px] top-0 sm:left-[200px] left-[100px] right-0 '>
+      <div className='relative bg-zinc-200 pr-4 h-full flex items-center justify-end '>
         {currentUser ? (
           <Dropdown menu={{ items: dropdownItems }} trigger={['click']} placement='bottom'>
             <div className='flex items-center cursor-pointer border h-full rounded-md p-3'>

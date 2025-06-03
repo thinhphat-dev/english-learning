@@ -16,6 +16,8 @@ import {
 } from '@/schema/form.schema';
 import { useMutation } from '@tanstack/react-query';
 import { dataOptionLevel } from '@/constans/database/data-option';
+import { RadioInput } from '@/components/form/RadioInput';
+import { genderOptions } from '@/enum/gender.enum';
 
 const RegisterPage = () => {
   const { mutate } = useMutation({
@@ -33,6 +35,7 @@ const RegisterPage = () => {
     <AuthForm onFinish={handleRegister}>
       <TextInput formItemName='fullname' label='Họ Và Tên' placeholder='Nhập họ và tên' rules={getFullNameSchema} hasFeedback />
       <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' rules={getEmailSchema} />
+      <RadioInput formItemName='gender' label='Giới Tính' options={genderOptions} hasFeedback initialValue='MALE'></RadioInput>
       <SelectInput
         label='Trình Độ Hiện Tại'
         formItemName='level'

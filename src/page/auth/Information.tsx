@@ -8,6 +8,8 @@ import { TextInput } from '@/components/form/TextInput';
 import { getFullNameSchema, getLevelSchema } from '@/schema/form.schema';
 import { SelectInput } from '@/components/form/SelectInput';
 import { dataOptionLevel } from '@/constans/database/data-option';
+import { RadioInput } from '@/components/form/RadioInput';
+import { genderOptions } from '@/enum/gender.enum';
 
 const Information = () => {
   const { currentUser, setUserInfo } = useAuthStore();
@@ -22,6 +24,7 @@ const Information = () => {
     mutationFn: (values: UserInfo) =>
       updateUserInfo(currentUser!.uid, {
         fullname: values.fullname,
+        gender: values.gender,
         level: values.level,
       }),
     onSuccess: (data, variables) => {
@@ -51,6 +54,12 @@ const Information = () => {
           }}>
           <TextInput formItemName='fullname' label='Họ Và Tên' rules={getFullNameSchema} hasFeedback disabled={!isEditing} />
           <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' disabled />
+          <RadioInput
+            formItemName='gender'
+            label='Giới Tính'
+            initialValue={userInfo.gender}
+            disabled={!isEditing}
+            options={genderOptions}></RadioInput>
           <SelectInput
             label='Trình Độ Hiện Tại'
             formItemName='level'

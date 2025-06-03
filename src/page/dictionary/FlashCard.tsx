@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchFlashcards } from '@/service/flashcardService';
 import { useAuthStore } from '@/store/auth.store';
 import { Button } from 'antd';
+import Title from 'antd/es/typography/Title';
 
 const FlashCard = () => {
   const { currentUser } = useAuthStore();
@@ -41,23 +42,28 @@ const FlashCard = () => {
   } else {
     const currentCard = flashcards[currentIndex];
     return (
-      <div className='flex flex-col mt-14 items-center min-h-[500px] gap-6 p-6'>
-        <FlipCard
-          front={currentCard.word}
-          back={currentCard.meaning}
-          imageUrl={currentCard.imageUrl}
-          flipped={flipped}
-          setFlipped={setFlipped}
-        />
-        <div className='flex gap-4 mt-4'>
-          <Button onClick={handlePrev} size='large'>
-            Quay lại
-          </Button>
-          <Button type='primary' size='large' onClick={handleNext}>
-            Tiếp theo
-          </Button>
+      <>
+        <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>
+          FLASH CARD
+        </Title>
+        <div className='flex flex-col mt-14 items-center min-h-[500px] gap-6 p-6'>
+          <FlipCard
+            front={currentCard.word}
+            back={currentCard.meaning}
+            imageUrl={currentCard.imageUrl}
+            flipped={flipped}
+            setFlipped={setFlipped}
+          />
+          <div className='flex gap-4 mt-4'>
+            <Button onClick={handlePrev} size='large'>
+              Quay lại
+            </Button>
+            <Button type='primary' size='large' onClick={handleNext}>
+              Tiếp theo
+            </Button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 };
