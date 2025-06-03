@@ -1,12 +1,18 @@
 import { auth, db } from '@/config/firebase';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 export interface FlashcardData {
   word: string;
   meaning: string;
   imageUrl: string;
   createdAt?: Date;
 }
-export const saveFlashcard = async (data: FlashcardData): Promise<void> => {
+export const saveFlashcard = async (data: FlashcardData, userId: string): Promise<void> => {
+  const itemsRef = collection(db, 'flashcards', userId, 'items');
+  const q = query(itemsRef, where('word', '==', data.word));
+  const snapshot = await getDocs(q);
+  if (!snapshot.empty) {
+    throw new Error('Từ này đã tồn tại trong Flashcard!');
+  }
   const user = auth.currentUser;
   if (!user) {
     throw new Error('Bạn chưa đăng nhập');

@@ -1,42 +1,39 @@
-import { Button, Form, Input, message, Select, Spin } from 'antd';
-import { LevelEnum } from '@/enum/level.enum';
+import { Button, Form, message, Spin } from 'antd';
 import { useState } from 'react';
-import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/config/firebase';
 import { useAuthStore } from '@/store/auth.store';
-import { useQuery } from '@tanstack/react-query';
-import { fetchUserData } from '@/service/auth/auth.service';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { fetchUserData, updateUserInfo } from '@/service/auth/auth.service';
 import type { UserInfo } from '@/types/response.type';
+import { TextInput } from '@/components/form/TextInput';
+import { getFullNameSchema, getLevelSchema } from '@/schema/form.schema';
+import { SelectInput } from '@/components/form/SelectInput';
+import { dataOptionLevel } from '@/constans/database/data-option';
 
 const Information = () => {
   const { currentUser, setUserInfo } = useAuthStore();
   const [form] = Form.useForm();
   const [isEditing, setIsEditing] = useState(false);
-  const [loading, setLoading] = useState(false);
   const { data: userInfo, isLoading } = useQuery({
     queryKey: ['userInfo', currentUser?.uid],
     queryFn: () => fetchUserData(currentUser!.uid),
     enabled: !!currentUser,
   });
-
-  const handleSave = async (values: UserInfo) => {
-    if (!currentUser) return;
-    try {
-      setLoading(true);
-      await updateDoc(doc(db, 'users', currentUser.uid), {
+  const { mutate: saveUserInfo, isPending: saving } = useMutation({
+    mutationFn: (values: UserInfo) =>
+      updateUserInfo(currentUser!.uid, {
         fullname: values.fullname,
         level: values.level,
-      });
-      setUserInfo(values);
-      message.success('Lưu thông tin cá nhân thành công');
+      }),
+    onSuccess: (data, variables) => {
+      message.success('Cập nhật thông tin cá nhân thành công');
+      setUserInfo(variables);
       setIsEditing(false);
-    } catch (err) {
+    },
+    onError: (err) => {
       console.error('Lỗi khi cập nhật:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+      message.error('Lỗi khi lưu thông tin');
+    },
+  });
   return (
     <div className='max-w-lg mx-auto mt-8 p-4 bg-white rounded shadow'>
       {isLoading || !userInfo || !currentUser ? (
@@ -46,30 +43,23 @@ const Information = () => {
           key={isEditing ? 'edit' : 'view'}
           form={form}
           layout='vertical'
-          onFinish={handleSave}
+          onFinish={saveUserInfo}
           initialValues={{
             fullname: userInfo.fullname,
             email: userInfo.email,
             level: userInfo.level,
           }}>
-          <Form.Item label='Họ và tên' name='fullname' rules={[{ required: true, message: 'Không được để trống!' }]}>
-            <Input disabled={!isEditing} />
-          </Form.Item>
-
-          <Form.Item label='Email' name='email'>
-            <Input disabled />
-          </Form.Item>
-
-          <Form.Item label='Bạn đang là' name='level' rules={[{ required: true }]}>
-            <Select disabled={!isEditing}>
-              {Object.entries(LevelEnum).map(([value, label]) => (
-                <Select.Option key={value} value={value}>
-                  {label}
-                </Select.Option>
-              ))}
-            </Select>
-          </Form.Item>
-
+          <TextInput formItemName='fullname' label='Họ Và Tên' rules={getFullNameSchema} hasFeedback disabled={!isEditing} />
+          <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' disabled />
+          <SelectInput
+            label='Trình Độ Hiện Tại'
+            formItemName='level'
+            rules={getLevelSchema}
+            initialValue={userInfo.level}
+            placeholder='Trình Độ Hiện Tại'
+            options={dataOptionLevel}
+            disabled={!isEditing}
+          />
           <div className='flex justify-end gap-4'>
             {!isEditing ? (
               <Button type='primary' onClick={() => setIsEditing(true)}>
@@ -77,8 +67,8 @@ const Information = () => {
               </Button>
             ) : (
               <>
-                <Button htmlType='submit' type='primary' loading={loading}>
-                  Lưu
+                <Button htmlType='submit' type='primary' loading={saving}>
+                  Cập nhật
                 </Button>
                 <Button
                   onClick={() => {

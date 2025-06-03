@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { PoweroffOutlined, UserOutlined } from '@ant-design/icons';
 import { logout } from '@/service/auth/auth.service';
 import { useAuthStore } from '@/store/auth.store';
+import Title from 'antd/es/typography/Title';
 
 type headerProps = {
   bg: string;
@@ -29,7 +30,7 @@ const dropdownItems: MenuProps['items'] = [
   },
 ];
 
-const Header = ({ bg }: headerProps) => {
+const CHeader = ({ bg }: headerProps) => {
   const Header = Layout;
   const { currentUser, userInfo } = useAuthStore();
 
@@ -40,7 +41,9 @@ const Header = ({ bg }: headerProps) => {
           <Dropdown menu={{ items: dropdownItems }} trigger={['click']} placement='bottom'>
             <div className='flex items-center cursor-pointer border h-full rounded-md p-3'>
               <Avatar size='large' icon={<UserOutlined />} />
-              <div className='name m-3'> {userInfo?.fullname}</div>
+              <Title className='name m-3 font-' level={4}>
+                {userInfo?.fullname}
+              </Title>
             </div>
           </Dropdown>
         ) : (
@@ -55,4 +58,4 @@ const Header = ({ bg }: headerProps) => {
   );
 };
 
-export default Header;
+export default CHeader;

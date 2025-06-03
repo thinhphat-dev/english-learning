@@ -13,3 +13,7 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+.custom-divider-color::before,
+.custom-divider-color::after {
+  border-top-color: #2F54EB !important;
+}

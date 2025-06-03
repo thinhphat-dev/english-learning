@@ -10,7 +10,7 @@ const LoginPage = lazy(() => import('@/page/auth/LoginPage'));
 const RegisterPage = lazy(() => import('@/page/auth/RegisterPage'));
 const HomePage = lazy(() => import('@/page/home/HomePage'));
 const Information = lazy(() => import('@/page/auth/Information'));
-const Grammar = lazy(() => import('@/page/Grammar'));
+const Grammar = lazy(() => import('@/page/grammar/Grammar'));
 const DictionaryLookup = lazy(() => import('@/page/dictionary/DictionaryLookup'));
 const FlashCard = lazy(() => import('@/page/dictionary/FlashCard'));
 const ErrorPage403 = lazy(() => import('@/page/error/ErrorPage'));

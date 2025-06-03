@@ -3,12 +3,12 @@ import dayjs from 'dayjs';
 
 const { Footer: AntFooter } = Layout;
 
-const Footer = () => {
+const CFooter = () => {
   return (
-    <AntFooter className="p-2 fixed left-0 bottom-0 right-0 text-center h-[50px]">
+    <AntFooter className=" flex justify-center items-center fixed left-0 bottom-0 right-0 text-center h-[50px] bg-c-main-light-color">
       Ant Design ©{dayjs().year()} Xây dựng bởi thinhphat.dev@gmail.com
     </AntFooter>
   );
 };
 
-export default Footer;
+export default CFooter;

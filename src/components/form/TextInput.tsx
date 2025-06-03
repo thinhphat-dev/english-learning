@@ -13,6 +13,7 @@ export const TextInput = ({
   placeholder,
   classNameInput,
   classNameForm,
+  disabled,
   ...commonInputProps
 }: TextInputProps) => {
   return (
@@ -22,7 +23,7 @@ export const TextInput = ({
       hasFeedback={hasFeedback}
       className={classNameForm}
       {...commonInputProps}>
-      <Input placeholder={placeholder} className={classNameInput} />
+      <Input placeholder={placeholder} className={classNameInput} disabled={disabled} />
     </Form.Item>
   );
 };

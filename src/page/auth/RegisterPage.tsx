@@ -1,10 +1,9 @@
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import { Link } from 'react-router';
 import AuthForm from '@/components/auth/AuthForm';
 import { register } from '@/service/auth/auth.service';
 import type { RegisterParams } from '@/types/request.type';
 import { TextInput } from '@/components/form/TextInput';
-import { dataOptionLevel } from '@/constans/database/optionLevel';
 import { PasswordInput } from '@/components/form/PasswordInput';
 import { SelectInput } from '@/components/form/SelectInput';
 import { LevelEnum } from '@/enum/level.enum';
@@ -14,11 +13,20 @@ import {
   getFullNameSchema,
   getLevelSchema,
   getPasswordSchema,
-} from '@/schema/Form.Schema';
+} from '@/schema/form.schema';
+import { useMutation } from '@tanstack/react-query';
+import { dataOptionLevel } from '@/constans/database/data-option';
 
 const RegisterPage = () => {
+  const { mutate } = useMutation({
+    mutationFn: register,
+    onError: (error: any) => {
+      message.error('Lỗi đăng ký: ' + error?.message || 'Đã xảy ra lỗi');
+    },
+  });
+
   const handleRegister = (values: RegisterParams) => {
-    register(values);
+    mutate(values);
   };
 
   return (
@@ -26,11 +34,10 @@ const RegisterPage = () => {
       <TextInput formItemName='fullname' label='Họ Và Tên' placeholder='Nhập họ và tên' rules={getFullNameSchema} hasFeedback />
       <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' rules={getEmailSchema} />
       <SelectInput
-        label='Bạn Đang Là'
+        label='Trình Độ Hiện Tại'
         formItemName='level'
         rules={getLevelSchema}
         initialValue={LevelEnum.NEWBIE}
-        placeholder='Trình Độ Hiện Tại'
         options={dataOptionLevel}
       />
       <PasswordInput hasFeedback label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordSchema} />

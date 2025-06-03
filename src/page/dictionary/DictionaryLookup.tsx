@@ -1,15 +1,18 @@
 import { useState } from 'react';
-import { Input, Button, Form, message, Spin, Card, Tooltip } from 'antd';
+import { Button, message, Spin, Card, Tooltip } from 'antd';
 import { translatePartOfSpeech } from '@/utils/translation.helper';
 import { saveFlashcard } from '@/service/flashcardService';
 import { useAuthStore } from '@/store/auth.store';
 import { useDictionaryQuery } from '@/hooks/useDictionary';
+import { useMutation } from '@tanstack/react-query';
+import Search from 'antd/es/input/Search';
+import Title from 'antd/es/typography/Title';
+import { PlusOutlined } from '@ant-design/icons';
 
 const DictionaryLookup = () => {
   const [word, setWord] = useState('');
   const [submittedWord, setSubmittedWord] = useState('');
   const { currentUser } = useAuthStore();
-
   const { data, isLoading, isError, refetch } = useDictionaryQuery(submittedWord, !!submittedWord);
 
   const handleSearch = async () => {
@@ -17,38 +20,46 @@ const DictionaryLookup = () => {
     setSubmittedWord(word);
     refetch();
   };
-
-  const handleSave = async () => {
-    try {
-      await saveFlashcard({
-        word: data?.wordData.word || '',
-        meaning: data?.mean || '',
-        imageUrl: data?.image?.urls.small || '',
-      });
+  const { mutate: saveWord, isPending } = useMutation({
+    mutationFn: () =>
+      saveFlashcard(
+        {
+          word: data?.wordData.word || '',
+          meaning: data?.mean || '',
+          imageUrl: data?.image?.urls.small || '',
+        },
+        currentUser!.uid,
+      ),
+    onSuccess: () => {
       message.success('Đã thêm vào flashcard!');
-    } catch (error) {
-      message.error((error as Error).message);
-    }
+    },
+    onError: (error: any) => {
+      message.error(error.message || 'Lỗi khi lưu flashcard');
+    },
+  });
+  const handleSave = () => {
+    saveWord();
   };
 
   return (
-    <div className='max-w-3xl mx-auto  p-4'>
-      <Form layout='inline' onFinish={handleSearch} className='mb-6'>
-        <Form.Item>
-          <Input placeholder='Nhập từ tiếng Anh...' value={word} onChange={(e) => setWord(e.target.value)} className='w-64' />
-        </Form.Item>
-        <Form.Item>
-          <Button type='primary' htmlType='submit'>
-            Tra từ
-          </Button>
-        </Form.Item>
-      </Form>
-
+    <div className='max-w-3xl mx-auto mt-[-20px] p-4'>
+      <Title level={3}>Từ Điển</Title>
+      <div className='flex justify-center items-center mb-4'>
+        <Search
+          size='large'
+          placeholder='Nhập từ cần tra'
+          value={word}
+          enterButton
+          onChange={(e) => setWord(e.target.value)}
+          onSearch={handleSearch}
+          className='max-w-80'
+        />
+      </div>
       {isLoading && <Spin />}
       {isError && <p className='text-red-500'>Không tìm thấy từ hoặc lỗi kết nối.</p>}
 
       {data && (
-        <Card title={data.wordData.word} className='shadow-xl rounded-2xl mb-10'>
+        <Card title={data.wordData.word} className='shadow-xl w-full rounded-2xl mb-10'>
           {data.mean && (
             <div className='bg-green-100 p-3 rounded mb-4'>
               <p className='font-semibold'>Nghĩa tiếng Việt:</p>
@@ -102,7 +113,13 @@ const DictionaryLookup = () => {
           <div className='mt-6 text-right'>
             <Tooltip title={!currentUser ? 'Vui lòng đăng nhập để sử dụng' : ''}>
               <span>
-                <Button type='default' onClick={handleSave} className='ml-2' disabled={!currentUser}>
+                <Button
+                  type='primary'
+                  onClick={handleSave}
+                  className='ml-2'
+                  icon={<PlusOutlined />}
+                  disabled={!currentUser}
+                  loading={isPending}>
                   Thêm vào Flashcard
                 </Button>
               </span>

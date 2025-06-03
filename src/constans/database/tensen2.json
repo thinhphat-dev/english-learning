@@ -1,0 +1,840 @@
+[
+  {
+  "tense": "present-simple",
+  "name": "Hiện tại đơn",
+  "category": "present",
+  "type": "simple",
+  "signalWords": [
+    "always",
+    "usually",
+    "often",
+    "sometimes",
+    "rarely",
+    "never",
+    "every day",
+    "every week",
+    "on Mondays",
+    "in the morning"
+  ],
+  "structure": {
+    "affirmative": "S + V(s/es) + O",
+    "negative": "S + do/does + not + V + O",
+    "question": "Do/Does + S + V + O?"
+  },
+  "examples": [
+    {
+      "type": "affirmative",
+      "sentence": "I eat breakfast every day."
+    },
+    {
+      "type": "negative",
+      "sentence": "She does not eat breakfast every day."
+    },
+    {
+      "type": "question",
+      "sentence": "Do you eat breakfast every day?"
+    }
+  ],
+  "usage": [
+    {
+      "title": "1. Thói quen hoặc hành động lặp lại thường xuyên",
+      "examples": [
+        {
+          "vi": "Mô tả lịch trình cá nhân",
+          "en": "I drink coffee every morning.",
+          "vi_ex": "Tôi uống cà phê mỗi sáng."
+        }
+      ]
+    },
+    {
+      "title": "2. Sự thật hiển nhiên hoặc chân lý",
+      "examples": [
+        {
+          "vi": "Các hiện tượng tự nhiên",
+          "en": "The Earth orbits the Sun.",
+          "vi_ex": "Trái Đất quay quanh Mặt Trời."
+        }
+      ]
+    },
+    {
+      "title": "3. Lịch trình cố định (thường là các chuyến bay, tàu xe, sự kiện,...)",
+      "examples": [
+        {
+          "en": "The train departs at 9:00 AM tomorrow.",
+          "vi_ex": "Chuyến tàu khởi hành lúc 9 giờ sáng mai."
+        }
+      ]
+    },
+    {
+      "title": "4. Diễn tả cảm xúc, sở thích, khả năng, và các đặc điểm",
+      "examples": [
+        {
+          "en": "I like chocolate.",
+          "vi_ex": "Tôi thích sô cô la."
+        }
+      ]
+    }
+  ]
+}
+,
+  {
+    "tense": "present-continuous",
+    "name": "Hiện tại tiếp diễn",
+    "category": "present",
+    "type": "continuous",
+    "signalWords": ["now", "right now", "at the moment", "at present", "look!", "listen!"],
+    "structure": {
+      "affirmative": "S + is/am/are + V-ing",
+      "negative": "S + is/am/are + not + V-ing",
+      "question": "Is/Am/Are + S + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I am eating breakfast now."
+      },
+      {
+        "type": "negative",
+        "sentence": "She is not eating breakfast now."
+      },
+      {
+        "type": "question",
+        "sentence": "Are you eating breakfast now?"
+      }
+    ],
+    "usage": [
+  {
+    "title": "1. Hành động đang diễn ra tại thời điểm nói",
+    "examples": [
+      {
+        "en": "I am typing on my laptop right now.",
+        "vi_ex": "Tôi đang gõ máy tính ngay lúc này."
+      },
+      {
+        "en": "She is cooking dinner at the moment.",
+        "vi_ex": "Cô ấy đang nấu bữa tối vào lúc này."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động tạm thời hoặc đang diễn ra trong một khoảng thời gian tạm thời",
+    "examples": [
+      {
+        "en": "He is staying with his uncle for the summer.",
+        "vi_ex": "Anh ấy đang ở với chú mình trong mùa hè này."
+      },
+      {
+        "en": "They are learning French this semester.",
+        "vi_ex": "Họ đang học tiếng Pháp trong học kỳ này."
+      }
+    ]
+  },
+  {
+    "title": "3. Kế hoạch đã được sắp xếp",
+    "examples": [
+      {
+        "en": "I am meeting my friend at 6 PM.",
+        "vi_ex": "Tôi sẽ gặp bạn tôi lúc 6 giờ tối."
+      },
+      {
+        "en": "We are traveling to Paris next week.",
+        "vi_ex": "Chúng tôi sẽ đi Paris vào tuần tới."
+      }
+    ]
+  },
+  {
+    "title": "4. Diễn tả sự thay đổi hoặc phát triển",
+    "examples": [
+      {
+        "en": "The weather is getting colder.",
+        "vi_ex": "Thời tiết đang trở nên lạnh hơn."
+      },
+      {
+        "en": "Her English is improving day by day.",
+        "vi_ex": "Tiếng Anh của cô ấy đang cải thiện từng ngày."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "past-simple",
+    "name": "Quá khứ đơn",
+    "category": "past",
+    "signalWords": ["yesterday", "last night", "last week", "in 1990", "ago", "when I was a child"],
+    "type": "simple",
+    "structure": {
+      "affirmative": "S + V2/ed + O",
+      "negative": "S + did + not + V + O",
+      "question": "Did + S + V + O?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I ate breakfast yesterday."
+      },
+      {
+        "type": "negative",
+        "sentence": "She did not eat breakfast yesterday."
+      },
+      {
+        "type": "question",
+        "sentence": "Did you eat breakfast yesterday?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động đã hoàn thành trong quá khứ, không còn liên quan đến hiện tại",
+    "examples": [
+      {
+        "en": "I visited Paris last summer.",
+        "vi_ex": "Tôi đã đến Paris mùa hè năm ngoái."
+      },
+      {
+        "en": "She graduated in 2020.",
+        "vi_ex": "Cô ấy đã tốt nghiệp năm 2020."
+      }
+    ]
+  },
+  {
+    "title": "2. Chuỗi các hành động xảy ra liên tiếp trong quá khứ",
+    "examples": [
+      {
+        "en": "He woke up, brushed his teeth, and went to work.",
+        "vi_ex": "Anh ấy thức dậy, đánh răng, rồi đi làm."
+      }
+    ]
+  },
+  {
+    "title": "3. Hành động xảy ra trong một khoảng thời gian cụ thể trong quá khứ",
+    "examples": [
+      {
+        "en": "We lived in New York for five years.",
+        "vi_ex": "Chúng tôi đã sống ở New York trong 5 năm."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "past-continuous",
+    "name": "Quá khứ tiếp diễn",
+    "category": "past",
+    "signalWords": ["while", "when", "at that moment", "at 8 o’clock last night", "all evening"],
+    "type": "continuous",
+    "structure": {
+      "affirmative": "S + was/were + V-ing",
+      "negative": "S + was/were + not + V-ing",
+      "question": "Was/Were + S + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I was eating breakfast when you called."
+      },
+      {
+        "type": "negative",
+        "sentence": "She was not eating breakfast when you called."
+      },
+      {
+        "type": "question",
+        "sentence": "Were you eating breakfast when I called?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động đang diễn ra tại một thời điểm cụ thể trong quá khứ",
+    "examples": [
+      {
+        "en": "At 8 PM last night, I was watching a movie.",
+        "vi_ex": "Vào lúc 8 giờ tối qua, tôi đang xem phim."
+      },
+      {
+        "en": "They were playing soccer at this time yesterday.",
+        "vi_ex": "Họ đang chơi bóng vào thời điểm này hôm qua."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động đang diễn ra thì có hành động khác xen ngang (trong quá khứ)",
+    "examples": [
+      {
+        "en": "I was cooking when the phone rang.",
+        "vi_ex": "Tôi đang nấu ăn thì điện thoại reo."
+      },
+      {
+        "en": "He was reading a book when it started to rain.",
+        "vi_ex": "Anh ấy đang đọc sách thì trời bắt đầu mưa."
+      }
+    ]
+  },
+  {
+    "title": "3. Hai hành động xảy ra song song trong quá khứ",
+    "examples": [
+      {
+        "en": "While she was singing, he was playing the guitar.",
+        "vi_ex": "Khi cô ấy đang hát, anh ấy đang chơi guitar."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "future-simple",
+    "name": "Tương lai đơn",
+    "category": "future",
+    "signalWords": ["tomorrow", "next week", "in the future", "soon", "later", "in 2025"],
+    "type": "simple",
+    "structure": {
+      "affirmative": "S + will + V + O",
+      "negative": "S + will + not + V + O",
+      "question": "Will + S + V + O?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I will eat breakfast tomorrow."
+      },
+      {
+        "type": "negative",
+        "sentence": "She will not eat breakfast tomorrow."
+      },
+      {
+        "type": "question",
+        "sentence": "Will you eat breakfast tomorrow?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Mô tả một quyết định ngay tại thời điểm nói",
+    "examples": [
+      {
+        "en": "She will buy a new car this weekend.",
+        "vi_ex": "Cô ấy sẽ mua một chiếc xe hơi mới vào cuối tuần này."
+      }
+    ]
+  },
+  {
+    "title": "2. Mô tả một dự đoán không có cơ sở, căn cứ",
+    "examples": [
+      {
+        "en": "Maybe she will become a famous artist in the future.",
+        "vi_ex": "Có thể cô ấy sẽ trở thành một nghệ sĩ nổi tiếng trong tương lai."
+      }
+    ]
+  },
+  {
+    "title": "3. Sử dụng để đưa ra yêu cầu hay lời mời",
+    "examples": [
+      {
+        "en": "Will you come to my birthday party on Saturday?",
+        "vi_ex": "Bạn sẽ đến dự tiệc sinh nhật của tôi vào thứ Bảy chứ?"
+      }
+    ]
+  },
+  {
+    "title": "4. Dùng để đưa ra một lời hứa",
+    "examples": [
+      {
+        "en": "I promise I will always support you no matter what.",
+        "vi_ex": "Tôi hứa sẽ luôn ủng hộ bạn dù bất cứ chuyện gì xảy ra."
+      }
+    ]
+  },
+  {
+    "title": "5. Dùng để đưa ra một lời cảnh báo",
+    "examples": [
+      {
+        "en": "Hurry up! We will be late for the concert.",
+        "vi_ex": "Nhanh lên! Chúng ta sẽ trễ buổi hòa nhạc đấy."
+      }
+    ]
+  },
+  {
+    "title": "6. Dùng để đưa ra một lời đề nghị giúp đỡ",
+    "examples": [
+      {
+        "en": "Will/Shall I teach you how to use this software?",
+        "vi_ex": "Tôi chỉ bạn cách sử dụng phần mềm này nhé?"
+      }
+    ]
+  },
+  {
+    "title": "7. Dùng để đưa ra một gợi ý nào đó",
+    "examples": [
+      {
+        "en": "Shall we have Indian food?",
+        "vi_ex": "Chúng ta ăn đồ Ấn Độ nhé?"
+      }
+    ]
+  },
+  {
+    "title": "8. Dùng trong câu điều kiện loại 1",
+    "examples": [
+      {
+        "en": "If she comes to the party, I will introduce her to my friends.",
+        "vi_ex": "Nếu cô ấy đến bữa tiệc, tôi sẽ giới thiệu cô ấy với bạn bè của tôi."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "future-continuous",
+    "name": "Tương lai tiếp diễn",
+    "category": "future",
+    "signalWords": ["at this time tomorrow", "at 5 p.m. next Monday", "soon", "in the near future"],
+    "type": "continuous",
+    "structure": {
+      "affirmative": "S + will be + V-ing",
+      "negative": "S + will not be + V-ing",
+      "question": "Will + S + be + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I will be eating breakfast at 8 AM tomorrow."
+      },
+      {
+        "type": "negative",
+        "sentence": "She will not be eating breakfast at 8 AM tomorrow."
+      },
+      {
+        "type": "question",
+        "sentence": "Will you be eating breakfast at 8 AM tomorrow?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động hoặc sự việc sẽ 'đang diễn ra' ở một khoảng thời gian hay một thời điểm cụ thể trong tương lai",
+    "examples": [
+      {
+        "en": "I will be meeting my friend at 3 PM tomorrow.",
+        "vi_ex": "Tôi sẽ đang gặp bạn tôi vào lúc 3 giờ chiều ngày mai."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động hoặc sự việc đang diễn ra trong tương lai thì bị một hành động, sự việc khác xen vào",
+    "examples": [
+      {
+        "en": "He will be cooking dinner when her guests arrive.",
+        "vi_ex": "Anh ấy sẽ đang nấu bữa tối khi các vị khách của cô ấy đến."
+      }
+    ]
+  },
+  {
+    "title": "3. Hành động, sự việc sẽ diễn ra và kéo dài liên tục trong tương lai",
+    "examples": [
+      {
+        "en": "We will be traveling around Europe for the next six months.",
+        "vi_ex": "Chúng tôi sẽ đi du lịch quanh châu Âu trong sáu tháng tới."
+      }
+    ]
+  },
+  {
+    "title": "4. Hành động, sự việc sẽ xảy ra trong tương lai theo một lịch trình hoặc thời gian biểu có từ trước",
+    "examples": [
+      {
+        "en": "The concert will be starting at 7 PM tomorrow.",
+        "vi_ex": "Buổi hòa nhạc sẽ bắt đầu lúc 7 giờ tối ngày mai."
+      }
+    ]
+  },
+  {
+    "title": "5. Dùng để yêu cầu hoặc hỏi một cách lịch sự về một thông tin nào đó trong tương lai",
+    "examples": [
+      {
+        "en": "Will you be bringing your friend to the concert tonight?",
+        "vi_ex": "Bạn có dẫn bạn của mình đến buổi hòa nhạc tối nay không?"
+      }
+    ]
+  },
+  {
+    "title": "6. Mô tả hành động đang diễn ra ở hiện tại và vẫn sẽ tiếp tục diễn ra trong tương lai, thường dùng với 'still'",
+    "examples": [
+      {
+        "en": "Tomorrow Lan will still be suffering from her cold.",
+        "vi_ex": "Ngày mai Lan vẫn sẽ đang bị cảm."
+      }
+    ]
+  },
+  {
+    "title": "7. Mô tả các hành động xảy ra song song trong cùng một ngữ cảnh, cùng thời điểm trong tương lai",
+    "examples": [
+      {
+        "en": "They will be traveling to Europe, and we will be exploring Asia at the same time next summer.",
+        "vi_ex": "Họ sẽ đi du lịch châu Âu, và chúng tôi sẽ khám phá châu Á cùng lúc vào mùa hè tới."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "present-perfect",
+    "name": "Hiện tại hoàn thành",
+    "category": "present",
+    "signalWords": ["just", "already", "yet", "ever", "never", "since", "for", "recently", "lately", "so far", "up to now"],
+    "type": "perfect",
+    "structure": {
+      "affirmative": "S + have/has + V3/ed + O",
+      "negative": "S + have/has + not + V3/ed + O",
+      "question": "Have/Has + S + V3/ed + O?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I have eaten breakfast already."
+      },
+      {
+        "type": "negative",
+        "sentence": "She has not eaten breakfast yet."
+      },
+      {
+        "type": "question",
+        "sentence": "Have you eaten breakfast yet?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động đã xảy ra trong quá khứ nhưng kết quả còn ảnh hưởng đến hiện tại",
+    "examples": [
+      {
+        "en": "She has lost her keys, so she can’t get into the house.",
+        "vi_ex": "Cô ấy đã làm mất chìa khóa, vì vậy cô ấy không vào được nhà."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động bắt đầu trong quá khứ và kéo dài đến hiện tại",
+    "examples": [
+      {
+        "en": "We have lived here for 10 years.",
+        "vi_ex": "Chúng tôi đã sống ở đây được 10 năm."
+      },
+      {
+        "en": "He has worked at this company since 2015.",
+        "vi_ex": "Anh ấy đã làm việc tại công ty này từ năm 2015."
+      }
+    ]
+  },
+  {
+    "title": "3. Hành động vừa mới xảy ra",
+    "examples": [
+      {
+        "en": "I have just eaten lunch.",
+        "vi_ex": "Tôi vừa ăn trưa xong."
+      },
+      {
+        "en": "She has just arrived at the airport.",
+        "vi_ex": "Cô ấy vừa tới sân bay."
+      }
+    ]
+  },
+  {
+    "title": "4. Kinh nghiệm sống hoặc trải nghiệm trong cuộc đời",
+    "examples": [
+      {
+        "en": "Have you ever visited Japan?",
+        "vi_ex": "Bạn đã từng đến Nhật Bản chưa?"
+      },
+      {
+        "en": "I have never seen a shooting star.",
+        "vi_ex": "Tôi chưa bao giờ thấy sao băng."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "present-perfect-continuous",
+    "name": "Hiện tại hoàn thành tiếp diễn",
+    "category": "present",
+    "signalWords": ["for", "since", "lately", "recently", "all day", "all morning", "how long"],
+    "type": "perfect-continuous",
+    "structure": {
+      "affirmative": "S + have/has + been + V-ing",
+      "negative": "S + have/has + not + been + V-ing",
+      "question": "Have/Has + S + been + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I have been eating breakfast for an hour."
+      },
+      {
+        "type": "negative",
+        "sentence": "She has not been eating breakfast for an hour."
+      },
+      {
+        "type": "question",
+        "sentence": "Have you been eating breakfast for an hour?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động bắt đầu trong quá khứ và vẫn đang tiếp tục ở hiện tại",
+    "examples": [
+      {
+        "en": "I have been learning English for 3 years.",
+        "vi_ex": "Tôi đã học tiếng Anh được 3 năm."
+      },
+      {
+        "en": "She has been working here since 2019.",
+        "vi_ex": "Cô ấy đã làm việc ở đây từ năm 2019."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động vừa kết thúc nhưng để lại dấu hiệu hoặc kết quả rõ ràng",
+    "examples": [
+      {
+        "en": "He is exhausted because he has been running.",
+        "vi_ex": "Anh ấy kiệt sức vì mới vừa chạy bộ."
+      },
+      {
+        "en": "Have you been crying? Your eyes are red.",
+        "vi_ex": "Nãy giờ bạn khóc phải không? Mắt bạn còn đỏ kìa."
+      }
+    ]
+  },
+  {
+    "title": "3. Hành động lặp lại trong khoảng thời gian từ quá khứ đến hiện tại",
+    "examples": [
+      {
+        "en": "He has been calling her all day.",
+        "vi_ex": "Anh ấy đã gọi cho cô ấy cả ngày nay."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "past-perfect",
+    "name": "Quá khứ hoàn thành",
+    "category": "past",
+    "signalWords": ["before", "after", "by the time", "when", "already", "just"],
+    "type": "perfect",
+    "structure": {
+      "affirmative": "S + had + V3/ed + O",
+      "negative": "S + had + not + V3/ed + O",
+      "question": "Had + S + V3/ed + O?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I had eaten breakfast before you arrived."
+      },
+      {
+        "type": "negative",
+        "sentence": "She had not eaten breakfast before you arrived."
+      },
+      {
+        "type": "question",
+        "sentence": "Had you eaten breakfast before I arrived?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Khi 2 hành động cùng diễn ra trong quá khứ, sử dụng quá khứ hoàn thành cho hành động diễn ra trước và thì quá khứ đơn cho hành động diễn ra sau",
+    "examples": [
+      {
+        "en": "Nga had studied French before she moved to Paris.",
+        "vi_ex": "Nga đã học tiếng Pháp trước khi cô ấy chuyển đến Paris."
+      }
+    ]
+  },
+  {
+    "title": "2. Mô tả một hành động đã xảy ra và hoàn thành trước một thời điểm hoặc một hành động khác trong quá khứ",
+    "examples": [
+      {
+        "en": "When I arrived at the airport, the flight had already departed.",
+        "vi_ex": "Khi tôi đến sân bay, chuyến bay đã cất cánh rồi."
+      }
+    ]
+  },
+  {
+    "title": "3. Sử dụng kết hợp với thì quá khứ đơn",
+    "examples": [
+      {
+        "en": "After he had finished reading the novel, he recommended it to his friends.",
+        "vi_ex": "Sau khi anh ấy đọc xong cuốn tiểu thuyết, anh ấy đã giới thiệu nó cho bạn bè."
+      }
+    ]
+  },
+  {
+    "title": "4. Hành động xảy ra như một điều kiện tiên quyết cho các hành động khác",
+    "examples": [
+      {
+        "en": "Nam had prepared for the exams and was ready to do well.",
+        "vi_ex": "Nam đã chuẩn bị cho kỳ thi và sẵn sàng làm tốt."
+      }
+    ]
+  },
+  {
+    "title": "5. Dùng trong câu điều kiện loại 3",
+    "examples": [
+      {
+        "en": "She would have bought the car if she had had enough money.",
+        "vi_ex": "Cô ấy đã mua chiếc xe nếu cô ấy có đủ tiền."
+      }
+    ]
+  },
+  {
+    "title": "6. Mô tả một hành động đã xảy ra trong một khoảng thời gian ở quá khứ, trước một mốc thời gian khác",
+    "examples": [
+      {
+        "en": "Lan had waited for nearly three hours when Nam arrived at the station.",
+        "vi_ex": "Lan đã đợi gần ba tiếng khi Nam đến ga."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "past-perfect-continuous",
+    "name": "Quá khứ hoàn thành tiếp diễn",
+    "category": "past",
+    "signalWords": ["for", "since", "all day", "all morning", "before"],
+    "type": "perfect-continuous",
+    "structure": {
+      "affirmative": "S + had + been + V-ing",
+      "negative": "S + had + not + been + V-ing",
+      "question": "Had + S + been + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I had been eating breakfast for an hour before you arrived."
+      },
+      {
+        "type": "negative",
+        "sentence": "She had not been eating breakfast for an hour before you arrived."
+      },
+      {
+        "type": "question",
+        "sentence": "Had you been eating breakfast for an hour before I arrived?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Hành động được bắt đầu ở quá khứ, diễn ra liên tục kéo dài trong một khoảng thời gian và kết thúc tại một thời điểm cụ thể ở quá khứ",
+    "examples": [
+      {
+        "en": "I had been painting my room from the morning to noon yesterday.",
+        "vi_ex": "Tôi đã sơn phòng từ sáng đến trưa ngày hôm qua."
+      }
+    ]
+  },
+  {
+    "title": "2. Hành động diễn ra liên tục kéo dài cho đến khi bị một hành động khác ở quá khứ xen vào",
+    "examples": [
+      {
+        "en": "She had been reading a book until her friend called her to go to the movies.",
+        "vi_ex": "Cô ấy đã đọc sách cho đến khi bạn cô ấy gọi đi xem phim."
+      }
+    ]
+  },
+  {
+    "title": "3. Diễn tả kết quả do một hành động nào đó đã gây ra trong quá khứ",
+    "examples": [
+      {
+        "en": "Sarah was exhausted because she had been shopping for hours.",
+        "vi_ex": "Sarah kiệt sức vì cô ấy đã đi mua sắm suốt nhiều giờ."
+      }
+    ]
+  },
+  {
+    "title": "4. Hành động diễn ra liên tục trước một thời điểm cụ thể trong quá khứ",
+    "examples": [
+      {
+        "en": "She had been swimming for 2 hours up to 7pm last night.",
+        "vi_ex": "Cô ấy đã bơi suốt 2 tiếng cho đến 7 giờ tối hôm qua."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "future-perfect",
+    "name": "Tương lai hoàn thành",
+    "category": "future",
+    "signalWords": ["by", "by the time", "before", "until", "till"],
+    "type": "perfect",
+    "structure": {
+      "affirmative": "S + will have + V3/ed + O",
+      "negative": "S + will not have + V3/ed + O",
+      "question": "Will + S + have + V3/ed + O?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I will have eaten breakfast by 8 AM tomorrow."
+      },
+      {
+        "type": "negative",
+        "sentence": "She will not have eaten breakfast by 8 AM tomorrow."
+      },
+      {
+        "type": "question",
+        "sentence": "Will you have eaten breakfast by 8 AM tomorrow?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Diễn tả một hành động, sự việc đã hoàn thành trước một thời điểm trong tương lai",
+    "examples": [
+      {
+        "en": "I will have completed this course before I start my new job.",
+        "vi_ex": "Tôi sẽ hoàn thành khóa học này trước khi bắt đầu công việc mới."
+      }
+    ]
+  },
+  {
+    "title": "2. Diễn tả một hành động, sự việc sẽ được hoàn thành trước một hành động hoặc sự việc khác trong tương lai",
+    "examples": [
+      {
+        "en": "Before the plane takes off, all passengers will have gone through security checks.",
+        "vi_ex": "Trước khi máy bay cất cánh, tất cả hành khách sẽ đã qua kiểm tra an ninh."
+      }
+    ]
+  }
+]
+  },
+  {
+    "tense": "future-perfect-continuous",
+    "name": "Tương lai hoàn thành tiếp diễn",
+    "category": "future",
+    "signalWords": ["for", "by the time", "before", "until", "since"],
+    "type": "perfect-continuous",
+    "structure": {
+      "affirmative": "S + will have + been + V-ing",
+      "negative": "S + will not have + been + V-ing",
+      "question": "Will + S + have + been + V-ing?"
+    },
+    "examples": [
+      {
+        "type": "affirmative",
+        "sentence": "I will have been eating breakfast for an hour by 8 AM tomorrow."
+      },
+      {
+        "type": "negative",
+        "sentence": "She will not have been eating breakfast for an hour by 8 AM tomorrow."
+      },
+      {
+        "type": "question",
+        "sentence": "Will you have been eating breakfast for an hour by 8 AM tomorrow?"
+      }
+    ],"usage": [
+  {
+    "title": "1. Diễn tả một hành động, sự việc đã bắt đầu trong quá khứ và kéo dài đến một thời điểm cụ thể trong tương lai",
+    "examples": [
+      {
+        "en": "By next month, I will have been living in this apartment for two years.",
+        "vi_ex": "Đến tháng sau, tôi sẽ đã sống trong căn hộ này được hai năm."
+      }
+    ]
+  },
+  {
+    "title": "2. Nhấn mạnh tính liên tục của một hành động, sự việc tính đến thời điểm của một hành động, sự việc khác trong tương lai",
+    "examples": [
+      {
+        "en": "By the time we get home, the kids will have been playing in the park for two hours.",
+        "vi_ex": "Khi chúng ta về đến nhà, bọn trẻ sẽ đã chơi ở công viên được hai tiếng đồng hồ."
+      }
+    ]
+  }
+]
+  }
+]

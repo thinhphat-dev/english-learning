@@ -3,7 +3,7 @@ import type { LoginParams, RegisterParams } from '@/types/request.type';
 import type { UserInfo } from '@/types/response.type';
 import { message } from 'antd';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 
 export const loginWithPassword = async (values: LoginParams) => {
   const { email, password } = values;
@@ -55,4 +55,9 @@ export const fetchUserData = async (uid: string): Promise<UserInfo> => {
   } else {
     throw new Error('User not found');
   }
+};
+
+export const updateUserInfo = async (uid: string, data: Partial<UserInfo>) => {
+  await updateDoc(doc(db, 'users', uid), data);
+  return data;
 };

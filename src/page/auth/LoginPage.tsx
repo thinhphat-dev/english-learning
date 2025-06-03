@@ -4,13 +4,13 @@ import AuthForm from '@/components/auth/AuthForm';
 import { loginWithPassword } from '@/service/auth/auth.service';
 import { TextInput } from '@/components/form/TextInput';
 import { PasswordInput } from '@/components/form/PasswordInput';
-import { getEmailSchema, getPasswordSchema } from '@/schema/Form.Schema';
+import { getEmailSchema, getPasswordLoginSchema } from '@/schema/form.schema';
 
 const LoginPage = () => {
   return (
     <AuthForm onFinish={loginWithPassword}>
       <TextInput formItemName='email' label='Email' placeholder='Nhập email' rules={getEmailSchema} />
-      <PasswordInput label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordSchema} />
+      <PasswordInput label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordLoginSchema} />
       <div className='w-full mt-[-20px] flex justify-end pb-2'>
         <a href='#'>Quên Mật Khẩu?</a>
       </div>

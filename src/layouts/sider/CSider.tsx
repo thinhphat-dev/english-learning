@@ -11,7 +11,7 @@ interface CustomSiderProps {
   setCollapsed: (value: boolean) => void;
 }
 
-const CustomSider: React.FC<CustomSiderProps> = ({ collapsed, setCollapsed }) => {
+const CSider: React.FC<CustomSiderProps> = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
   const menuItems = useMemo(() => getMenuList({ navigate }), []);
   const location = useLocation();
@@ -36,4 +36,4 @@ const CustomSider: React.FC<CustomSiderProps> = ({ collapsed, setCollapsed }) =>
   );
 };
 
-export default CustomSider;
+export default CSider;
