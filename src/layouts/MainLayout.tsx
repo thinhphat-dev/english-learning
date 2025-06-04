@@ -15,14 +15,14 @@ const MainLayout = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.sm;
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer },
   } = theme.useToken();
 
   return (
-    <div className='min-h-screen max-h-screen '>
-      <Layout className='h-screen bg-zinc-200 '>
+    <div className='h-screen overflow-hidden'>
+      <Layout className='h-full bg-zinc-200'>
         {!isMobile && <CSider collapsed={collapsed} setCollapsed={setCollapsed} />}
-        <div className='fixed top-0 left-0 right-0 z-50'>
+        <div className='fixed top-0 left-0 right-0 z-10'>
           <CHeader bg={colorBgContainer} />
           {isMobile && (
             <Button
@@ -32,30 +32,21 @@ const MainLayout = () => {
             />
           )}
         </div>
-
         <Drawer
           title='Menu'
           placement='left'
-          width={210}
+          width={200}
           closable
           onClose={() => setDrawerVisible(false)}
           open={drawerVisible}
           bodyStyle={{ padding: 0 }}>
           <CSider collapsed={false} setCollapsed={() => {}} />
         </Drawer>
-
         <Content
-          className={`overflow-auto transition-all h-[650px] mb-[50px] duration-300 ${
+          className={`overflow-auto transition-all  duration-300 px-4 mt-[80px] mb-[50px] ${
             !isMobile ? (collapsed ? 'ml-[80px]' : 'ml-[224px]') : ''
-          } mt-[80px]`}>
-          <div
-            className='p-6  max-h-[650px] '
-            style={{
-              borderRadius: borderRadiusLG,
-              height: 'calc(100vh - 64px - 50px)',
-            }}>
-            <Outlet />
-          </div>
+          }`}>
+          <Outlet />
         </Content>
       </Layout>
       <CFooter />

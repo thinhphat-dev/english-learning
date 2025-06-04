@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import FlipCard from '@/components/card/Card';
-import { useQuery } from '@tanstack/react-query';
-import { fetchFlashcards } from '@/service/flashcardService';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { deleteFlashcard, fetchFlashcards } from '@/service/flashcardService';
 import { useAuthStore } from '@/store/auth.store';
-import { Button } from 'antd';
 import Title from 'antd/es/typography/Title';
+import { Button, Popconfirm } from 'antd';
 
 const FlashCard = () => {
   const { currentUser } = useAuthStore();
@@ -19,6 +19,17 @@ const FlashCard = () => {
     queryKey: ['flashcards', currentUser?.uid],
     queryFn: () => fetchFlashcards(currentUser?.uid || ''),
     enabled: !!currentUser,
+  });
+
+  const queryClient = useQueryClient();
+
+  const deleteMutation = useMutation({
+    mutationFn: (flashcardId: string) => deleteFlashcard(currentUser?.uid || '', flashcardId),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['flashcards', currentUser?.uid] });
+      setCurrentIndex(0);
+      setFlipped(false);
+    },
   });
 
   const handleNext = () => {
@@ -46,22 +57,33 @@ const FlashCard = () => {
         <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>
           FLASH CARD
         </Title>
-        <div className='flex flex-col mt-14 items-center min-h-[500px] gap-6 p-6'>
+
+        <div className='relative flex flex-col mt-14 items-center min-h-[500px] gap-6 p-6'>
           <FlipCard
             front={currentCard.word}
             back={currentCard.meaning}
             imageUrl={currentCard.imageUrl}
             flipped={flipped}
             setFlipped={setFlipped}
+            onPrev={handlePrev}
+            onNext={handleNext}
           />
-          <div className='flex gap-4 mt-4'>
-            <Button onClick={handlePrev} size='large'>
-              Quay lại
-            </Button>
-            <Button type='primary' size='large' onClick={handleNext}>
-              Tiếp theo
-            </Button>
-          </div>
+          <Popconfirm
+            placement='bottomLeft'
+            title='Bạn muốn xóa từ này khỏi flashcard?'
+            description='Bạn đã thuộc từ này?'
+            okText='Xóa'
+            cancelText='Chưa'
+            okButtonProps={{
+              loading: deleteMutation.isPending,
+              danger: true,
+              className: 'bg-red-500 hover:bg-red-600 border-none', 
+            }}
+            onConfirm={() => {
+              deleteMutation.mutate(currentCard.id);
+            }}>
+            <Button className='px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition'>Xoá từ này</Button>
+          </Popconfirm>
         </div>
       </>
     );

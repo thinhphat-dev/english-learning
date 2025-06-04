@@ -1,0 +1,74 @@
+{
+  "type": "Verb",
+  "title_vn": "Động từ",
+  "definition": "Động từ là từ chỉ hành động, trạng thái hoặc quá trình của chủ ngữ trong câu.",
+  "examples": [
+    {
+      "sentence": "I study English every day.",
+      "translation": "Tôi học tiếng Anh mỗi ngày.",
+      "note": "study là động từ chỉ hành động"
+    },
+    {
+      "sentence": "She feels tired.",
+      "translation": "Cô ấy cảm thấy mệt mỏi.",
+      "note": "feels là động từ chỉ trạng thái"
+    },
+    {
+      "sentence": "The sun rises in the East.",
+      "translation": "Mặt trời mọc ở phía Đông.",
+      "note": "rises là động từ chỉ một quá trình/sự thật hiển nhiên"
+    },
+    {
+      "sentence": "He arrived yesterday.",
+      "translation": "Anh ấy đã đến hôm qua.",
+      "note": "arrived là động từ ở thì quá khứ"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Nội động từ (Intransitive Verb)",
+      "description": "Là động từ không cần tân ngữ theo sau.",
+      "examples": [
+        "He sleeps peacefully.",
+        "The baby cried loudly."
+      ]
+    },
+    {
+      "name": "Ngoại động từ (Transitive Verb)",
+      "description": "Là động từ cần có tân ngữ theo sau.",
+      "examples": [
+        "She reads a book.",
+        "They built a house."
+      ]
+    },
+    {
+      "name": "Liên động từ (Linking Verb)",
+      "description": "Là động từ nối chủ ngữ với bổ ngữ.",
+      "examples": [
+        "He is a teacher.",
+        "The soup smells delicious."
+      ]
+    },
+    {
+      "name": "Động từ khuyết thiếu (Modal Verb)",
+      "description": "Là các động từ đi kèm để thể hiện khả năng, sự cho phép, sự bắt buộc...",
+      "examples": [
+        "She can swim.",
+        "You must stop here."
+      ]
+    },
+    {
+      "name": "Phrasal Verb (Cụm động từ)",
+      "description": "Là cụm gồm động từ chính + giới từ/trạng từ tạo thành nghĩa mới.",
+      "examples": [
+        "He gave up smoking.",
+        "They look after the children."
+      ]
+    }
+  ],
+  "signals": [
+    "Thường đứng sau chủ ngữ.",
+    "Có thể đi kèm với trạng từ chỉ thời gian: now, always, often...",
+    "Động từ ở thì hiện tại, quá khứ hoặc tương lai tùy theo ngữ cảnh."
+  ]
+}

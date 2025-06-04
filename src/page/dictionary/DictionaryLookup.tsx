@@ -7,7 +7,7 @@ import { useDictionaryQuery } from '@/hooks/useDictionary';
 import { useMutation } from '@tanstack/react-query';
 import Search from 'antd/es/input/Search';
 import Title from 'antd/es/typography/Title';
-import { PlusOutlined } from '@ant-design/icons';
+import { BookOutlined } from '@ant-design/icons';
 
 const DictionaryLookup = () => {
   const [word, setWord] = useState('');
@@ -43,7 +43,9 @@ const DictionaryLookup = () => {
 
   return (
     <div className='max-w-3xl mx-auto mt-[-20px] p-4'>
-      <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>Từ Điển</Title>
+      <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>
+        Từ Điển
+      </Title>
       <div className='flex justify-center items-center mb-4'>
         <Search
           size='large'
@@ -117,7 +119,7 @@ const DictionaryLookup = () => {
                   type='primary'
                   onClick={handleSave}
                   className='ml-2'
-                  icon={<PlusOutlined />}
+                  icon={<BookOutlined className='text-lg' />}
                   disabled={!currentUser}
                   loading={isPending}>
                   Thêm vào Flashcard

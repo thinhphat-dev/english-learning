@@ -23,3 +23,24 @@ export interface Tense {
     }[];
   }[];
 }
+
+export interface GrammarExample {
+  sentence: string;
+  translation: string;
+  note?: string; // note có thể không có
+}
+
+export interface GrammarCategory {
+  name: string;
+  description: string;
+  examples: string[];
+}
+
+export interface GrammarItem {
+  type: 'Noun' | 'Adverb' | 'Adjective' | 'Verb' | string;
+  title_vn: string;
+  definition: string;
+  examples: GrammarExample[];
+  signals: string[];
+  categories: GrammarCategory[];
+}

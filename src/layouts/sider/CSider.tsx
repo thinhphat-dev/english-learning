@@ -24,8 +24,8 @@ const CSider: React.FC<CustomSiderProps> = ({ collapsed, setCollapsed }) => {
       collapsedWidth={80}
       theme='light'
       onBreakpoint={(broken) => setCollapsed(broken)}
-      className='fixed h-[100vh] left-0 top-0 bottom-0 transition-all duration-300'>
-      <div className='p-4'>{collapsed ? <LogoStudy4 /> : <LogoStudy4 withText />}</div>
+      className='fixed h-[100vh] z-20 left-0 top-0 bottom-0 transition-all duration-300'>
+      <div className='p-4 z-50'>{collapsed ? <LogoStudy4 /> : <LogoStudy4 withText />}</div>
       <Menu
         theme='light'
         mode='inline'
