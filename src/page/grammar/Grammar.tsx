@@ -14,7 +14,7 @@ export default function GrammarPage() {
   const [filteredTense, setFilteredTense] = useState<Tense | null>(null);
 
   useEffect(() => {
-    if (selectedGrammarType !== 'tenses') {
+    if (selectedGrammarType !== 'Tenses') {
       setCategory(null);
       setType(null);
       setFilteredTense(null);
@@ -33,7 +33,7 @@ export default function GrammarPage() {
   }, [selectedCategory, selectedType]);
 
   useEffect(() => {
-    if (selectedGrammarType === 'tenses' && selectedCategory && selectedType) {
+    if (selectedGrammarType === 'Tenses' && selectedCategory && selectedType) {
       const match = tenses.find((t) => t.category === selectedCategory && t.type === selectedType);
       setFilteredTense(match || null);
     }
@@ -53,7 +53,7 @@ export default function GrammarPage() {
           options={dataOptionGrammar}
           className='w-full md:w-1/3'
         />
-        {selectedGrammarType === 'tenses' && (
+        {selectedGrammarType === 'Tenses' && (
           <>
             <Select
               placeholder='Thời gian'
@@ -73,9 +73,8 @@ export default function GrammarPage() {
         )}
       </div>
       {filteredTense && <TenseCard tense={filteredTense} />}
-      {selectedGrammarType && selectedGrammarType !== 'tenses' && <DetailGrammarCard grammarType={selectedGrammarType} />}
-
-      {selectedGrammarType === 'tenses' && !filteredTense && (
+      {selectedGrammarType && selectedGrammarType !== 'Tenses' && <DetailGrammarCard grammarType={selectedGrammarType} />}
+      {selectedGrammarType === 'Tenses' && !filteredTense && (
         <div className='text-center p-6 bg-gray-50 border rounded-md text-gray-500'>
           Vui lòng chọn thời gian và loại thì để xem chi tiết
         </div>

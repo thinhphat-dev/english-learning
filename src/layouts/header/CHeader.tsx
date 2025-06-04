@@ -36,7 +36,7 @@ const CHeader = ({ bg }: headerProps) => {
 
   return (
     <Header className='fixed z-0 h-[64px] top-0 w-full right-0 '>
-      <div className='relative bg-zinc-200 pr-4 h-full flex items-center justify-end '>
+      <div className='relative  bg-white pr-4 h-full flex items-center justify-end '>
         {currentUser ? (
           <Dropdown menu={{ items: dropdownItems }} trigger={['click']} placement='bottom'>
             <div className='flex items-center cursor-pointer border h-full rounded-md p-3'>

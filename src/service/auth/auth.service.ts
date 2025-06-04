@@ -36,11 +36,14 @@ export const register = async (values: RegisterParams) => {
 export const logout = async () => {
   try {
     await signOut(auth);
+    localStorage.removeItem('auth-storage');
+    localStorage.removeItem('jwt');
     message.success('Đã đăng xuất');
   } catch (error) {
     message.error('Lỗi đăng xuất: ' + error);
   }
 };
+
 
 export const fetchUserData = async (uid: string): Promise<UserInfo> => {
   const docRef = doc(db, 'users', uid);

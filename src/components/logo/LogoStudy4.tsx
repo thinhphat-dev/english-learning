@@ -9,7 +9,7 @@ const LogoStudy4 = ({ withText }: logoProps) => {
   return (
     <div className='justify-center items-center flex'>
       <Link to='/'>
-        <img src={withText ? Study4Logo : LogoNoText} alt='' className='h-14 p-1 pt-2 pb-2 ' />
+        <img src={withText ? Study4Logo : LogoNoText} alt='' className='h-9 w-36 pb-1 pr-1 pl-1' />
       </Link>
     </div>
   );

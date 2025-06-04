@@ -35,7 +35,7 @@ const FlipCard = ({ front, back, imageUrl, flipped, setFlipped, onPrev, onNext }
       />
 
       <div
-        className={`relative w-full h-full transition-transform duration-500 transform ${
+        className={`relative w-full bg-white rounded-xl h-full transition-transform duration-500 transform ${
           flipped ? 'rotate-y-180' : ''
         } [transform-style:preserve-3d]`}>
         <div className='absolute w-full h-full border rounded-2xl shadow-even flex items-center justify-center text-2xl font-bold backface-hidden'>
@@ -48,7 +48,7 @@ const FlipCard = ({ front, back, imageUrl, flipped, setFlipped, onPrev, onNext }
         </div>
       </div>
 
-      <div className='flex gap-4 justify-center mt-4 md:hidden' onClick={(e) => e.stopPropagation()}>
+      <div className='flex gap-4 justify-between mt-4 md:hidden' onClick={(e) => e.stopPropagation()}>
         <Button shape='circle' icon={<LeftOutlined />} onClick={onPrev} size='large' />
         <Button shape='circle' icon={<RightOutlined />} onClick={onNext} size='large' />
       </div>

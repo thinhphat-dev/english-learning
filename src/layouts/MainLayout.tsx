@@ -20,7 +20,7 @@ const MainLayout = () => {
 
   return (
     <div className='h-screen overflow-hidden'>
-      <Layout className='h-full bg-zinc-200'>
+      <Layout className='h-full bg-zinc-100'>
         {!isMobile && <CSider collapsed={collapsed} setCollapsed={setCollapsed} />}
         <div className='fixed top-0 left-0 right-0 z-10'>
           <CHeader bg={colorBgContainer} />
@@ -38,8 +38,7 @@ const MainLayout = () => {
           width={200}
           closable
           onClose={() => setDrawerVisible(false)}
-          open={drawerVisible}
-          bodyStyle={{ padding: 0 }}>
+          open={drawerVisible}>
           <CSider collapsed={false} setCollapsed={() => {}} />
         </Drawer>
         <Content

@@ -46,34 +46,34 @@ const HomePage = () => {
         <AppstoreOutlined className='text-c-sec-color text-2xl' /> Truy cập nhanh
       </h3>
       <Row gutter={[16, 16]}>
-        <Col xs={24} md={8}>
+        <Col xs={24} md={6}>
           <Link to='/dictionary'>
             <Card hoverable className='text-center'>
               <FileSearchOutlined className='text-amber-800 text-xl inline' /> Tra từ điển
             </Card>
           </Link>
         </Col>
-        <Col xs={24} md={8}>
+        <Col xs={24} md={6}>
           <Link to='/dictionary-flashcard'>
             <Card hoverable className='text-center'>
               <BookOutlined className='text-yellow-400 text-xl inline' /> Flashcard
             </Card>
           </Link>
         </Col>
-        <Col xs={24} md={8}>
+        <Col xs={24} md={6}>
           <Link to='/grammar'>
             <Card hoverable className='text-center'>
               <ReadOutlined className='text-blue-400 text-xl inline' /> Ngữ pháp
             </Card>
           </Link>
         </Col>
-        {/* <Col xs={24} md={6}>
+        <Col xs={24} md={6}>
           <Link to='/exercise'>
             <Card hoverable className='text-center'>
               <FormOutlined className='text-pink-400 text-xl inline' /> Bài tập
             </Card>
           </Link>
-        </Col> */}
+        </Col>
       </Row>
     </div>
   );

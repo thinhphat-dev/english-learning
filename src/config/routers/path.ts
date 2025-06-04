@@ -13,8 +13,8 @@ export const PATH = {
   },
   DICTIONARY:{
     PATH:  "/dictionary",
-    TEST:  {
-      PATH: "/dictionary-exercise",
+    QUIZ:  {
+      PATH: "/dictionary-quiz",
     },
      FLASHCARD:  {
       PATH: "/dictionary-flashcard",
@@ -22,8 +22,8 @@ export const PATH = {
   }, 
   GRAMMAR:{
     PATH:  "/grammar",
-    TEST:  {
-      PATH: "/grammar-exercise",
+    QUIZ:  {
+      PATH: "/grammar-quiz",
     }
   },
 };

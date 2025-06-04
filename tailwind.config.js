@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
        boxShadow: {
-        'even': '0 0 10px rgba(0, 0, 0, 0.3)', // bóng đều 4 phía
+        'even': '0 0 10px rgba(0, 0, 0, 0.3)', 
       },
       backgroundImage: {
         'bg-login': "url('./src/assets/auth/bg-login.png')",

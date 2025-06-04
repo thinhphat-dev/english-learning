@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import FlipCard from '@/components/card/Card';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { deleteFlashcard, fetchFlashcards } from '@/service/flashcardService';
+import { deleteFlashcard, fetchFlashcards } from '@/service/dictionary/flashcardService';
 import { useAuthStore } from '@/store/auth.store';
 import Title from 'antd/es/typography/Title';
 import { Button, Popconfirm } from 'antd';
@@ -10,6 +10,7 @@ const FlashCard = () => {
   const { currentUser } = useAuthStore();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const queryClient = useQueryClient();
 
   const {
     data: flashcards,
@@ -20,8 +21,6 @@ const FlashCard = () => {
     queryFn: () => fetchFlashcards(currentUser?.uid || ''),
     enabled: !!currentUser,
   });
-
-  const queryClient = useQueryClient();
 
   const deleteMutation = useMutation({
     mutationFn: (flashcardId: string) => deleteFlashcard(currentUser?.uid || '', flashcardId),
@@ -77,7 +76,7 @@ const FlashCard = () => {
             okButtonProps={{
               loading: deleteMutation.isPending,
               danger: true,
-              className: 'bg-red-500 hover:bg-red-600 border-none', 
+              className: 'bg-red-500 hover:bg-red-600 border-none',
             }}
             onConfirm={() => {
               deleteMutation.mutate(currentCard.id);

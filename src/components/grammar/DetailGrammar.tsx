@@ -1,10 +1,8 @@
 import { Card, Collapse, Divider, List, Typography } from 'antd';
-import adverbData from '@/constans/database/adverb.json'; // Make sure this path is correct
-import adjectiveData from '@/constans/database/adjectives.json';
-import nounData from '@/constans/database/noun.json';
-import verbData from '@/constans/database/verbs.json';
+import grammarData from '@/constans/database/grammar.json';
 import { useEffect, useState } from 'react';
 import type { GrammarItem } from '@/types/grammar';
+import { PaperClipOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 const { Panel } = Collapse;
@@ -15,26 +13,15 @@ type Props = {
 
 const GrammarDetailCard = ({ grammarType }: Props) => {
   const [selectedGrammar, setSelectedGrammar] = useState<GrammarItem>();
-
   useEffect(() => {
-    if (grammarType == 'nouns') {
-      setSelectedGrammar(nounData);
-    }
-    if (grammarType == 'verbs') {
-      setSelectedGrammar(verbData);
-    }
-    if (grammarType == 'adjectives') {
-      setSelectedGrammar(adjectiveData);
-    }
-    if (grammarType == 'adverbs') {
-      setSelectedGrammar(adverbData);
-    }
+    const selectedItem = grammarData.find((item) => item.type === grammarType?.slice(0, -1));
+    setSelectedGrammar(selectedItem);
   }, [grammarType]);
   if (!selectedGrammar) {
     return <div className='text-center text-gray-500 p-6'>Vui lòng chọn một loại ngữ pháp để xem chi tiết.</div>;
   }
   return (
-    <div className='p-6 w-full mx-auto bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-xl'>
+    <div className='p-6 w-full mx-auto bg-gradient-to-r bg-white to-indigo-100 rounded-lg shadow-xl'>
       <Title level={3}>
         {selectedGrammar.title_vn}
         <span className='block sm:inline text-c-main-color'> ( {selectedGrammar.type} )</span>
@@ -53,9 +40,6 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
             <div className='text-c-sec-color font-bold'>Phân loại trạng từ</div>
           </Divider>
           <Card bordered={false} className='shadow-lg rounded-xl bg-white'>
-            <Title level={4} className='text-blue-600 border-b pb-2 mb-3'>
-              Phân loại trạng từ
-            </Title>
             <Collapse accordion expandIconPosition='right' className='rounded-lg overflow-hidden'>
               {selectedGrammar.categories.map((category, idx) => (
                 <Panel
@@ -82,12 +66,9 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
           </Divider>
 
           <Card bordered={false} className='mb-6 shadow-lg rounded-xl bg-white'>
-            <Title level={4} className='text-blue-600 border-b pb-2 mb-3'>
-              Ví dụ minh họa
-            </Title>
             <List
               itemLayout='vertical'
-              dataSource={adverbData.examples}
+              dataSource={selectedGrammar.examples}
               renderItem={(item) => (
                 <List.Item className='py-3 border-b border-gray-100 last:border-0'>
                   <div className='flex flex-col'>
@@ -98,7 +79,7 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
                       {item.translation}
                     </Text>
                     {item.note && (
-                      <Text className='text-sm text-blue-500 mt-1'>
+                      <Text className='text-sm text-c-third-color mt-1'>
                         <span className='font-semibold'>Lưu ý:</span> {item.note}
                       </Text>
                     )}
@@ -118,7 +99,7 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
           dataSource={selectedGrammar.signals}
           renderItem={(item) => (
             <List.Item className='border-b border-gray-100 last:border-0 py-2'>
-              <Text className='text-gray-700'>✅ {item}</Text>
+              <Text className='text-gray-700'><PaperClipOutlined /> {item}</Text>
             </List.Item>
           )}
         />

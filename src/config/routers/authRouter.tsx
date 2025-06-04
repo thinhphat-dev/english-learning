@@ -4,7 +4,7 @@ import { PATH } from '@/config/routers/path';
 import { Navigate } from 'react-router';
 import { Loading } from '@/config/routers/index';
 
-export const PublicRouteElement = ({ children }: { children: ReactNode }) => {
+export const PublicRoute = ({ children }: { children: ReactNode }) => {
   const { currentUser, loading } = useAuthStore();
   if (loading) {
     return <Loading />;
@@ -15,7 +15,7 @@ export const PublicRouteElement = ({ children }: { children: ReactNode }) => {
   return children;
 };
 
-export const PrivateRouteElement = ({ children }: { children: ReactNode }) => {
+export const PrivateRoute = ({ children }: { children: ReactNode }) => {
   const { currentUser, loading } = useAuthStore();
   if (loading) {
     return <Loading />;

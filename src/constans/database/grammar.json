@@ -1,0 +1,271 @@
+[
+    {
+  "type": "Noun",
+  "title_vn": "Danh Từ",
+  "definition": "Danh từ (Noun/ N) là từ dùng để chỉ người, vật, địa điểm, ý tưởng hoặc hiện tượng nào đó. Danh từ có thể được sử dụng như chủ ngữ hoặc tân ngữ trong câu.",
+  "examples": [
+    {
+      "sentence": "She is reading a book.",
+      "translation": "Cô ấy đang đọc một quyển sách.",
+      "note": "book là danh từ chỉ vật"
+    },
+    {
+      "sentence": "Happiness is important in life.",
+      "translation": "Hạnh phúc là điều quan trọng trong cuộc sống.",
+      "note": "Happiness là danh từ trừu tượng"
+    }
+  ],
+  "signals": [
+    "a/an/the + noun (e.g., a cat, the book)",
+    "tính từ (adj) + noun (e.g., beautiful girl)",
+    "sở hữu + noun (e.g., John's car)",
+    "sau các động từ chỉ sở hữu hoặc có: have, own, possess (e.g., I have a pen)"
+  ],
+  "categories": [
+    {
+      "name": "Danh từ cụ thể (Concrete Nouns)",
+      "description": "Chỉ những sự vật có thể nhìn thấy, chạm vào.",
+      "examples": ["table", "car", "dog"]
+    },
+    {
+      "name": "Danh từ trừu tượng (Abstract Nouns)",
+      "description": "Chỉ những khái niệm, ý tưởng, cảm xúc không thể nhìn thấy.",
+      "examples": ["love", "freedom", "happiness"]
+    },
+    {
+      "name": "Danh từ đếm được (Countable Nouns)",
+      "description": "Có thể đếm được bằng số.",
+      "examples": ["apple", "chair", "student"]
+    },
+    {
+      "name": "Danh từ không đếm được (Uncountable Nouns)",
+      "description": "Không thể đếm bằng số, thường là chất, ý tưởng.",
+      "examples": ["water", "information", "rice"]
+    },
+    {
+      "name": "Danh từ riêng (Proper Nouns)",
+      "description": "Tên riêng của người, địa danh, tổ chức.",
+      "examples": ["John", "Vietnam", "Microsoft"]
+    },
+    {
+      "name": "Danh từ tập hợp (Collective Nouns)",
+      "description": "Chỉ một nhóm người hoặc vật.",
+      "examples": ["team", "family", "group"]
+    }
+  ]
+}
+,
+{
+  "type": "Adverb",
+  "title_vn": "Trạng Từ",
+  "definition": "Trạng từ (adverb) là từ dùng để bổ nghĩa cho động từ, tính từ, một trạng từ khác hoặc cả câu, làm rõ hơn về cách thức, mức độ, thời gian, nơi chốn hoặc tần suất của hành động/sự việc.",
+  "examples": [
+    {
+      "sentence": "She sings beautifully.",
+      "translation": "Cô ấy hát rất hay.",
+      "note": "beautifully là trạng từ bổ nghĩa cho động từ sings"
+    },
+    {
+      "sentence": "He runs very fast.",
+      "translation": "Anh ấy chạy rất nhanh.",
+      "note": "very là trạng từ bổ nghĩa cho trạng từ fast"
+    },
+    {
+      "sentence": "She is incredibly talented.",
+      "translation": "Cô ấy tài năng một cách đáng kinh ngạc.",
+      "note": "incredibly là trạng từ bổ nghĩa cho tính từ talented"
+    },
+    {
+      "sentence": "Fortunately, we arrived on time.",
+      "translation": "May mắn thay, chúng tôi đã đến đúng giờ.",
+      "note": "Fortunately là trạng từ bổ nghĩa cho cả câu"
+    }
+  ],
+  "signals": [
+    "Vị trí: thường đứng sau động từ hoặc trước tính từ/trạng từ khác.",
+    "Hình thức: Nhiều trạng từ được tạo thành bằng cách thêm '-ly' vào tính từ (e.g., quick -> quickly, careful -> carefully).",
+    "Một số trạng từ có hình thức giống hệt tính từ (e.g., fast, hard, early)."
+  ],
+  "categories": [
+    {
+      "name": "Trạng từ chỉ cách thức (Adverbs of Manner)",
+      "description": "Diễn tả cách thức một hành động diễn ra.",
+      "examples": ["slowly", "quickly", "happily", "well", "badly"]
+    },
+    {
+      "name": "Trạng từ chỉ tần suất (Adverbs of Frequency)",
+      "description": "Diễn tả mức độ thường xuyên của một hành động.",
+      "examples": ["always", "often", "sometimes", "never", "usually"]
+    },
+    {
+      "name": "Trạng từ chỉ thời gian (Adverbs of Time)",
+      "description": "Diễn tả thời điểm một hành động diễn ra.",
+      "examples": ["now", "yesterday", "tomorrow", "soon", "later"]
+    },
+    {
+      "name": "Trạng từ chỉ nơi chốn (Adverbs of Place)",
+      "description": "Diễn tả địa điểm một hành động diễn ra.",
+      "examples": ["here", "there", "everywhere", "outside", "above"]
+    },
+    {
+      "name": "Trạng từ chỉ mức độ (Adverbs of Degree)",
+      "description": "Diễn tả mức độ hoặc cường độ của một tính từ, trạng từ hoặc động từ.",
+      "examples": ["very", "too", "extremely", "quite", "almost"]
+    },
+    {
+      "name": "Trạng từ nghi vấn (Interrogative Adverbs)",
+      "description": "Được dùng để đặt câu hỏi.",
+      "examples": ["where", "when", "why", "how"]
+    },
+    {
+      "name": "Trạng từ liên hệ (Relative Adverbs)",
+      "description": "Dùng để giới thiệu mệnh đề quan hệ.",
+      "examples": ["where", "when", "why"]
+    },
+    {
+      "name": "Trạng từ nối (Conjunctive Adverbs)",
+      "description": "Nối hai mệnh đề hoặc câu, thể hiện mối quan hệ ngữ nghĩa.",
+      "examples": ["however", "therefore", "consequently", "moreover"]
+    }
+  ]
+},
+{
+  "type": "Adjective",
+  "title_vn": "Tính Từ",
+  "definition": "Tính từ trong tiếng Anh (Adjective), có ký hiệu là Adj, là những từ dùng để miêu tả về đặc điểm, đặc tính hoặc tính cách của con người, sự vật hoặc hiện tượng. Bên cạnh đó, tính từ còn sử dụng với vai trò là bổ nghĩa cho danh từ, đại từ hoặc động từ tình thái.",
+  "examples": [
+    {
+      "sentence": "She is a beautiful girl.",
+      "translation": "Cô ấy là một cô gái xinh đẹp.",
+      "note": "beautiful là tính từ miêu tả cho danh từ girl"
+    },
+    {
+      "sentence": "The dog looks happy.",
+      "translation": "Con chó trông vui vẻ.",
+      "note": "happy là tính từ đứng sau linking verb 'looks'"
+    },
+    {
+      "sentence": "This is my car.",
+      "translation": "Đây là xe của tôi.",
+      "note": "my là tính từ sở hữu"
+    },
+    {
+      "sentence": "I have many books.",
+      "translation": "Tôi có nhiều sách.",
+      "note": "many là tính từ số lượng"
+    },
+    {
+      "sentence": "Which color do you prefer?",
+      "translation": "Bạn thích màu nào hơn?",
+      "note": "which là tính từ nghi vấn"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Tính từ miêu tả (Descriptive Adjectives)",
+      "description": "Diễn tả đặc điểm, tính chất của người hoặc vật.",
+      "examples": ["beautiful", "tall", "intelligent", "blue", "happy"]
+    },
+    {
+      "name": "Tính từ sở hữu (Possessive Adjectives)",
+      "description": "Chỉ sự sở hữu hoặc liên kết với người/vật.",
+      "examples": ["my", "your", "his", "her", "our", "their"]
+    },
+    {
+      "name": "Tính từ chỉ định (Demonstrative Adjectives)",
+      "description": "Xác định người hoặc vật cụ thể.",
+      "examples": ["this", "that", "these", "those"]
+    },
+    {
+      "name": "Tính từ số lượng (Quantitative Adjectives)",
+      "description": "Chỉ số lượng người/vật.",
+      "examples": ["some", "many", "few", "several", "much"]
+    },
+    {
+      "name": "Tính từ nghi vấn (Interrogative Adjectives)",
+      "description": "Dùng để đặt câu hỏi về người/vật.",
+      "examples": ["which", "what", "whose"]
+    }
+  ],
+  "signals": [
+    "Thường đứng trước danh từ để bổ nghĩa cho danh từ đó.",
+    "Có thể đứng sau động từ 'to be' hoặc các linking verbs (seem, look, feel...).",
+    "Dạng so sánh thường có đuôi -er, -est hoặc dùng more/most.",
+    "Thường xuất hiện trong các cụm như: 'a/an + adjective + noun'."
+  ]
+},
+{
+  "type": "Verb",
+  "title_vn": "Động từ",
+  "definition": "Động từ trong tiếng Anh (Verb, viết tắt là V) là một loại từ dùng để diễn tả hành động, trạng thái hoặc tình trạng của chủ thể đang nhắc tới (người, vật hoặc sự vật). Động từ là một thành phần quan trọng trong cấu trúc câu, không thể thành lập câu mà không có động từ.",
+  "examples": [
+    {
+      "sentence": "I study English every day.",
+      "translation": "Tôi học tiếng Anh mỗi ngày.",
+      "note": "study là động từ chỉ hành động"
+    },
+    {
+      "sentence": "She feels tired.",
+      "translation": "Cô ấy cảm thấy mệt mỏi.",
+      "note": "feels là động từ chỉ trạng thái"
+    },
+    {
+      "sentence": "The sun rises in the East.",
+      "translation": "Mặt trời mọc ở phía Đông.",
+      "note": "rises là động từ chỉ một quá trình/sự thật hiển nhiên"
+    },
+    {
+      "sentence": "He arrived yesterday.",
+      "translation": "Anh ấy đã đến hôm qua.",
+      "note": "arrived là động từ ở thì quá khứ"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Nội động từ (Intransitive Verb)",
+      "description": "Là động từ không cần tân ngữ theo sau.",
+      "examples": [
+        "He sleeps peacefully.",
+        "The baby cried loudly."
+      ]
+    },
+    {
+      "name": "Ngoại động từ (Transitive Verb)",
+      "description": "Là động từ cần có tân ngữ theo sau.",
+      "examples": [
+        "She reads a book.",
+        "They built a house."
+      ]
+    },
+    {
+      "name": "Liên động từ (Linking Verb)",
+      "description": "Là động từ nối chủ ngữ với bổ ngữ.",
+      "examples": [
+        "He is a teacher.",
+        "The soup smells delicious."
+      ]
+    },
+    {
+      "name": "Động từ khuyết thiếu (Modal Verb)",
+      "description": "Là các động từ đi kèm để thể hiện khả năng, sự cho phép, sự bắt buộc...",
+      "examples": [
+        "She can swim.",
+        "You must stop here."
+      ]
+    },
+    {
+      "name": "Phrasal Verb (Cụm động từ)",
+      "description": "Là cụm gồm động từ chính + giới từ/trạng từ tạo thành nghĩa mới.",
+      "examples": [
+        "He gave up smoking.",
+        "They look after the children."
+      ]
+    }
+  ],
+  "signals": [
+    "Thường đứng sau chủ ngữ.",
+    "Có thể đi kèm với trạng từ chỉ thời gian: now, always, often...",
+    "Động từ ở thì hiện tại, quá khứ hoặc tương lai tùy theo ngữ cảnh."
+  ]
+}
+]

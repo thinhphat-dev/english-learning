@@ -27,7 +27,7 @@ export interface Tense {
 export interface GrammarExample {
   sentence: string;
   translation: string;
-  note?: string; // note có thể không có
+  note?: string;
 }
 
 export interface GrammarCategory {

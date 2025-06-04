@@ -1,0 +1,122 @@
+[
+  {
+    "category": "Danh từ",
+    "question": "Which word is a noun?",
+    "options": ["quickly", "beautiful", "run", "table"],
+    "correct_answer": "table"
+  },
+  {
+    "category": "Danh từ",
+    "question": "Identify the noun in the sentence: 'The cat sat on the mat.'",
+    "options": ["sat", "on", "cat", "the"],
+    "correct_answer": "cat"
+  },
+  {
+    "category": "Danh từ",
+    "question": "Which of these is a common noun?",
+    "options": ["happy", "jump", "city", "slowly"],
+    "correct_answer": "city"
+  },
+  {
+    "category": "Danh từ",
+    "question": "What is the noun in the phrase 'a large book'?",
+    "options": ["a", "large", "book", "is"],
+    "correct_answer": "book"
+  },
+  {
+    "category": "Danh từ",
+    "question": "Choose the noun: 'kindly, house, eat, blue'.",
+    "options": ["kindly", "house", "eat", "blue"],
+    "correct_answer": "house"
+  },
+  {
+    "category": "Tính từ",
+    "question": "Which word is an adjective?",
+    "options": ["sing", "loudly", "tall", "desk"],
+    "correct_answer": "tall"
+  },
+  {
+    "category": "Tính từ",
+    "question": "Find the adjective: 'The dog was friendly.'",
+    "options": ["dog", "was", "friendly", "the"],
+    "correct_answer": "friendly"
+  },
+  {
+    "category": "Tính từ",
+    "question": "Which word describes a quality?",
+    "options": ["write", "quickly", "sweet", "window"],
+    "correct_answer": "sweet"
+  },
+  {
+    "category": "Tính từ",
+    "question": "In 'a red apple', what is the adjective?",
+    "options": ["a", "red", "apple", "in"],
+    "correct_answer": "red"
+  },
+  {
+    "category": "Tính từ",
+    "question": "Select the adjective: 'brave, carefully, run, student'.",
+    "options": ["brave", "carefully", "run", "student"],
+    "correct_answer": "brave"
+  },
+  {
+    "category": "Trạng từ",
+    "question": "Which word is an adverb?",
+    "options": ["happy", "quickly", "chair", "sleep"],
+    "correct_answer": "quickly"
+  },
+  {
+    "category": "Trạng từ",
+    "question": "Identify the adverb: 'She sings beautifully.'",
+    "options": ["she", "sings", "beautifully", "a"],
+    "correct_answer": "beautifully"
+  },
+  {
+    "category": "Trạng từ",
+    "question": "Which word tells how something is done?",
+    "options": ["sad", "loud", "loudly", "book"],
+    "correct_answer": "loudly"
+  },
+  {
+    "category": "Trạng từ",
+    "question": "What is the adverb in 'He walks slowly'?",
+    "options": ["he", "walks", "slowly", "is"],
+    "correct_answer": "slowly"
+  },
+  {
+    "category": "Trạng từ",
+    "question": "Choose the adverb: 'kind, read, often, tree'.",
+    "options": ["kind", "read", "often", "tree"],
+    "correct_answer": "often"
+  },
+  {
+    "category": "Động từ",
+    "question": "Which word is a verb?",
+    "options": ["slow", "big", "eat", "house"],
+    "correct_answer": "eat"
+  },
+  {
+    "category": "Động từ",
+    "question": "Identify the verb in: 'They play football.'",
+    "options": ["they", "play", "football", "a"],
+    "correct_answer": "play"
+  },
+  {
+    "category": "Động từ",
+    "question": "Which word expresses an action?",
+    "options": ["blue", "quickly", "jump", "car"],
+    "correct_answer": "jump"
+  },
+  {
+    "category": "Động từ",
+    "question": "What is the verb in the sentence 'Birds fly high'?",
+    "options": ["birds", "fly", "high", "in"],
+    "correct_answer": "fly"
+  },
+  {
+    "category": "Động từ",
+    "question": "Select the verb: 'strong, happy, run, quickly'.",
+    "options": ["strong", "happy", "run", "quickly"],
+    "correct_answer": "run"
+  }
+]

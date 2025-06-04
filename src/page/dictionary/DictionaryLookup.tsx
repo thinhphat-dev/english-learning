@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button, message, Spin, Card, Tooltip } from 'antd';
+import { Button, message, Spin, Card, Tooltip, Image } from 'antd';
 import { translatePartOfSpeech } from '@/utils/translation.helper';
-import { saveFlashcard } from '@/service/flashcardService';
+import { saveFlashcard } from '@/service/dictionary/flashcardService';
 import { useAuthStore } from '@/store/auth.store';
 import { useDictionaryQuery } from '@/hooks/useDictionary';
 import { useMutation } from '@tanstack/react-query';
@@ -20,10 +20,12 @@ const DictionaryLookup = () => {
     setSubmittedWord(word);
     refetch();
   };
+
   const { mutate: saveWord, isPending } = useMutation({
     mutationFn: () =>
       saveFlashcard(
         {
+          id: '',
           word: data?.wordData.word || '',
           meaning: data?.mean || '',
           imageUrl: data?.image?.urls.small || '',
@@ -37,6 +39,7 @@ const DictionaryLookup = () => {
       message.error(error.message || 'Lỗi khi lưu flashcard');
     },
   });
+
   const handleSave = () => {
     saveWord();
   };
@@ -54,7 +57,7 @@ const DictionaryLookup = () => {
           enterButton
           onChange={(e) => setWord(e.target.value)}
           onSearch={handleSearch}
-          className='max-w-80'
+          className='max-w-80 '
         />
       </div>
       {isLoading && <Spin />}
@@ -71,7 +74,7 @@ const DictionaryLookup = () => {
 
           {data.image && (
             <div className='mb-4 text-center'>
-              <img src={data.image.urls.small} alt={data.image.alt_description} className='mx-auto rounded-md max-h-60' />
+              <Image src={data.image.urls.small} alt={data.image.alt_description} className='mx-auto rounded-md max-h-60' />
               <p className='text-xs text-gray-500 mt-1'>Hình ảnh từ Unsplash</p>
             </div>
           )}

@@ -15,11 +15,13 @@ const Information = () => {
   const { currentUser, setUserInfo } = useAuthStore();
   const [form] = Form.useForm();
   const [isEditing, setIsEditing] = useState(false);
+
   const { data: userInfo, isLoading } = useQuery({
     queryKey: ['userInfo', currentUser?.uid],
     queryFn: () => fetchUserData(currentUser!.uid),
     enabled: !!currentUser,
   });
+
   const { mutate: saveUserInfo, isPending: saving } = useMutation({
     mutationFn: (values: UserInfo) =>
       updateUserInfo(currentUser!.uid, {
@@ -37,6 +39,7 @@ const Information = () => {
       message.error('Lỗi khi lưu thông tin');
     },
   });
+
   return (
     <div className='max-w-lg mx-auto mt-8 p-4 bg-white rounded shadow'>
       {isLoading || !userInfo || !currentUser ? (

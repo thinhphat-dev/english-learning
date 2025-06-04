@@ -34,9 +34,9 @@ export const getMenuList = ({ navigate }: MenuListProps): MenuItem[] => {
           onClick: () => navigate(PATH.DICTIONARY.PATH),
         },
         {
-          key: PATH.DICTIONARY.TEST.PATH,
+          key: PATH.DICTIONARY.QUIZ.PATH,
           label: 'Bài tập',
-          onClick: () => navigate(PATH.DICTIONARY.TEST.PATH),
+          onClick: () => navigate(PATH.DICTIONARY.QUIZ.PATH),
         },
         {
           key: PATH.DICTIONARY.FLASHCARD.PATH,
@@ -56,9 +56,9 @@ export const getMenuList = ({ navigate }: MenuListProps): MenuItem[] => {
           onClick: () => navigate(PATH.GRAMMAR.PATH),
         },
         {
-          key: PATH.GRAMMAR.TEST.PATH,
+          key: PATH.GRAMMAR.QUIZ.PATH,
           label: 'Bài tập',
-          onClick: () => navigate(PATH.GRAMMAR.TEST.PATH),
+          onClick: () => navigate(PATH.GRAMMAR.QUIZ.PATH),
         },
       ],
     },

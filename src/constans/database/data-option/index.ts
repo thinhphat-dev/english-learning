@@ -1,9 +1,9 @@
 export const dataOptionGrammar = [
-  { value: 'tenses', label: '12 Thì' },
-  { value: 'nouns', label: 'Danh từ' },
-  { value: 'verbs', label: 'Động từ' },
-  { value: 'adjectives', label: 'Tính từ' },
-  { value: 'adverbs', label: 'Trạng từ' },
+  { value: 'Tenses', label: '12 Thì' },
+  { value: 'Nouns', label: 'Danh từ' },
+  { value: 'Verbs', label: 'Động từ' },
+  { value: 'Adjectives', label: 'Tính từ' },
+  { value: 'Adverbs', label: 'Trạng từ' },
 ];
 
 export const dataOptionLevel = [
