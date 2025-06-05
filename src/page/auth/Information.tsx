@@ -1,7 +1,7 @@
 import { Button, Form, message, Spin } from 'antd';
 import { useState } from 'react';
 import { useAuthStore } from '@/store/auth.store';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchUserData, updateUserInfo } from '@/service/auth/auth.service';
 import type { UserInfo } from '@/types/response.type';
 import { TextInput } from '@/components/form/TextInput';
@@ -23,6 +23,8 @@ const Information = () => {
     enabled: !!currentUser,
   });
 
+  const queryClient = useQueryClient();
+
   const { mutate: saveUserInfo, isPending: saving } = useMutation({
     mutationFn: (values: UserInfo) =>
       updateUserInfo(currentUser!.uid, {
@@ -34,6 +36,7 @@ const Information = () => {
       message.success('Cập nhật thông tin cá nhân thành công');
       setUserInfo(variables);
       setIsEditing(false);
+      queryClient.invalidateQueries({ queryKey: ['userInfo', currentUser?.uid] }); // ✅ Gọi lại fetchUserData
     },
     onError: (err) => {
       console.error('Lỗi khi cập nhật:', err);
@@ -54,6 +57,7 @@ const Information = () => {
           initialValues={{
             fullname: userInfo.fullname,
             email: userInfo.email,
+            gender: userInfo.gender,
             level: userInfo.level,
           }}>
           <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
@@ -93,6 +97,7 @@ const Information = () => {
                       fullname: userInfo.fullname,
                       email: userInfo.email,
                       level: userInfo.level,
+                      gender: userInfo.gender,
                     });
                   }}>
                   Huỷ

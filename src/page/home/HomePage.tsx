@@ -3,26 +3,26 @@ import { getTotalCompletedQuizs } from '@/service/quiz/quiz.service';
 import { useAuthStore } from '@/store/auth.store';
 import { AppstoreOutlined, BookOutlined, FileSearchOutlined, HeartFilled, ReadOutlined } from '@ant-design/icons';
 import { useQuery } from '@tanstack/react-query';
-import { Card, Row, Col, Statistic, Progress } from 'antd';
+import { Card, Row, Col, Statistic, Progress, Spin } from 'antd';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const { currentUser, userInfo } = useAuthStore();
   const totalExercises = 40;
 
-  const { data: countLearnedFlashcards = 0 } = useQuery({
+  const { data: countLearnedFlashcards = 0, isLoading: isLoadingLearned } = useQuery({
     queryKey: ['CountLearnedFlashcards', currentUser?.uid],
     queryFn: () => getCountLearnedFlashcards(currentUser?.uid || ''),
     enabled: !!currentUser,
   });
 
-  const { data: countQuizsComplete = 0 } = useQuery({
+  const { data: countQuizsComplete = 0, isLoading: isLoadingQuiz } = useQuery({
     queryKey: ['CountQuizsComplete', currentUser?.uid],
     queryFn: () => getTotalCompletedQuizs(currentUser?.uid || ''),
     enabled: !!currentUser,
   });
 
-  const { data: countLearningFlashcards = [] } = useQuery({
+  const { data: countLearningFlashcards = [], isLoading: isLoadingFlashcards } = useQuery({
     queryKey: ['CountLearningFlashcards', currentUser?.uid],
     queryFn: () => fetchFlashcards(currentUser?.uid || ''),
     enabled: !!currentUser,
@@ -45,16 +45,20 @@ const HomePage = () => {
 
       <Row gutter={16}>
         <Col xs={24} md={12}>
-          <Card className='shadow-even m-2'>
-            <Statistic title='Từ vựng đã học' value={countLearnedFlashcards} suffix={`/ ${totalFlashcards}`} />
-            <Progress percent={flashcardPercent} size='small' status='active' className='mt-2' />
-          </Card>
+          <Spin spinning={isLoadingLearned || isLoadingFlashcards}>
+            <Card className='shadow-even m-2'>
+              <Statistic title='Từ vựng đã học' value={countLearnedFlashcards} suffix={`/ ${totalFlashcards}`} />
+              <Progress percent={flashcardPercent} size='small' status='active' className='mt-2' />
+            </Card>
+          </Spin>
         </Col>
         <Col xs={24} md={12}>
-          <Card className='shadow-even m-2'>
-            <Statistic title='Bài tập đã làm' value={countQuizsComplete} suffix={`/ ${totalExercises}`} />
-            <Progress percent={exercisePercent} size='small' status='active' className='mt-2' />
-          </Card>
+          <Spin spinning={isLoadingQuiz}>
+            <Card className='shadow-even m-2'>
+              <Statistic title='Bài tập đã làm' value={countQuizsComplete} suffix={`/ ${totalExercises}`} />
+              <Progress percent={exercisePercent} size='small' status='active' className='mt-2' />
+            </Card>
+          </Spin>
         </Col>
       </Row>
 
