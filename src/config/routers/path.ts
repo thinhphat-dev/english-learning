@@ -1,29 +1,32 @@
 export const PATH = {
   HOME: {
-    PATH: "/"
+    PATH: '/',
   },
   LOGIN: {
-    PATH: "/login",
+    PATH: '/login',
   },
-  REGISTER:{
-    PATH: "/register",
-  }, 
+  REGISTER: {
+    PATH: '/register',
+  },
+  FORGOTPASSWORD: {
+    PATH: '/forgot-password',
+  },
   INFORMATION: {
-    PATH: "/information",
+    PATH: '/information',
   },
-  DICTIONARY:{
-    PATH:  "/dictionary",
-    QUIZ:  {
-      PATH: "/dictionary-quiz",
+  DICTIONARY: {
+    PATH: '/dictionary',
+    QUIZ: {
+      PATH: '/dictionary-quiz',
     },
-     FLASHCARD:  {
-      PATH: "/dictionary-flashcard",
-    }
-  }, 
-  GRAMMAR:{
-    PATH:  "/grammar",
-    QUIZ:  {
-      PATH: "/grammar-quiz",
-    }
+    FLASHCARD: {
+      PATH: '/dictionary-flashcard',
+    },
+  },
+  GRAMMAR: {
+    PATH: '/grammar',
+    QUIZ: {
+      PATH: '/grammar-quiz',
+    },
   },
 };

@@ -1,3 +1,6 @@
+import { Button } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+
 interface FlipCardProps {
   front: string;
   back: string;
@@ -7,8 +10,6 @@ interface FlipCardProps {
   onPrev: () => void;
   onNext: () => void;
 }
-import { Button } from 'antd';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 const FlipCard = ({ front, back, imageUrl, flipped, setFlipped, onPrev, onNext }: FlipCardProps) => {
   return (
@@ -33,7 +34,6 @@ const FlipCard = ({ front, back, imageUrl, flipped, setFlipped, onPrev, onNext }
         size='large'
         className='hidden md:block absolute right-[-50px] top-1/2 -translate-y-1/2 z-10'
       />
-
       <div
         className={`relative w-full bg-white rounded-xl h-full transition-transform duration-500 transform ${
           flipped ? 'rotate-y-180' : ''
@@ -41,13 +41,11 @@ const FlipCard = ({ front, back, imageUrl, flipped, setFlipped, onPrev, onNext }
         <div className='absolute w-full h-full border rounded-2xl shadow-even flex items-center justify-center text-2xl font-bold backface-hidden'>
           {front}
         </div>
-
         <div className='absolute w-full h-full  border rounded-2xl shadow-even flex flex-col items-center justify-center text-center p-4 rotate-y-180 backface-hidden'>
           <p className='text-xl font-medium mb-4'>{back}</p>
           {imageUrl && <img src={imageUrl} alt={front} className='w-[240px] h-[180px] object-contain' />}
         </div>
       </div>
-
       <div className='flex gap-4 justify-between mt-4 md:hidden' onClick={(e) => e.stopPropagation()}>
         <Button shape='circle' icon={<LeftOutlined />} onClick={onPrev} size='large' />
         <Button shape='circle' icon={<RightOutlined />} onClick={onNext} size='large' />

@@ -4,6 +4,7 @@ export type VocabularyQuizItem = {
   options: string[];
   photoUrl: string;
 }
+
 export type GrammarQuizItem = {
   category: string;
   correct_answer: string;

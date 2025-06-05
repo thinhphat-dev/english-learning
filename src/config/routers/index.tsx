@@ -8,6 +8,7 @@ export const Loading = () => <div className='text-center mt-10'>Đang tải...</
 
 const LoginPage = lazy(() => import('@/page/auth/LoginPage'));
 const RegisterPage = lazy(() => import('@/page/auth/RegisterPage'));
+const ForgotPasswordPage = lazy(() => import('@/page/auth/ForgotPassword'));
 const HomePage = lazy(() => import('@/page/home/HomePage'));
 const Information = lazy(() => import('@/page/auth/Information'));
 const Grammar = lazy(() => import('@/page/grammar/Grammar'));
@@ -35,6 +36,16 @@ export const router = createBrowserRouter([
       <Suspense fallback={<Loading />}>
         <PublicRoute>
           <RegisterPage />
+        </PublicRoute>
+      </Suspense>
+    ),
+  },
+  {
+    path: PATH.FORGOTPASSWORD.PATH,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <PublicRoute>
+          <ForgotPasswordPage />
         </PublicRoute>
       </Suspense>
     ),

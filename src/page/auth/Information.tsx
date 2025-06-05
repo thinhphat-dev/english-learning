@@ -10,6 +10,7 @@ import { SelectInput } from '@/components/form/SelectInput';
 import { dataOptionLevel } from '@/constans/database/data-option';
 import { RadioInput } from '@/components/form/RadioInput';
 import { genderOptions } from '@/enum/gender.enum';
+import Title from 'antd/es/typography/Title';
 
 const Information = () => {
   const { currentUser, setUserInfo } = useAuthStore();
@@ -29,7 +30,7 @@ const Information = () => {
         gender: values.gender,
         level: values.level,
       }),
-    onSuccess: (data, variables) => {
+    onSuccess: (_data, variables) => {
       message.success('Cập nhật thông tin cá nhân thành công');
       setUserInfo(variables);
       setIsEditing(false);
@@ -55,6 +56,9 @@ const Information = () => {
             email: userInfo.email,
             level: userInfo.level,
           }}>
+          <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
+            Thông Tin Cá Nhân
+          </Title>
           <TextInput formItemName='fullname' label='Họ Và Tên' rules={getFullNameSchema} hasFeedback disabled={!isEditing} />
           <TextInput label='Email' formItemName='email' hasFeedback placeholder='Nhập email' disabled />
           <RadioInput

@@ -53,10 +53,9 @@ const FlashCard = () => {
     const currentCard = flashcards[currentIndex];
     return (
       <>
-        <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>
-          FLASH CARD
+        <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
+          Flash Card
         </Title>
-
         <div className='relative flex flex-col mt-14 items-center min-h-[500px] gap-6 p-6'>
           <FlipCard
             front={currentCard.word}

@@ -6,7 +6,7 @@ import Paragraph from 'antd/es/typography/Paragraph';
 const { Title, Text } = Typography;
 
 type TenseCardProps = {
-  tense: Tense; 
+  tense: Tense;
 };
 
 const TenseCard = (tense: TenseCardProps) => {

@@ -25,7 +25,6 @@ const DictionaryLookup = () => {
     mutationFn: () =>
       saveFlashcard(
         {
-          id: '',
           word: data?.wordData.word || '',
           meaning: data?.mean || '',
           imageUrl: data?.image?.urls.small || '',
@@ -46,7 +45,7 @@ const DictionaryLookup = () => {
 
   return (
     <div className='max-w-3xl mx-auto mt-[-20px] p-4'>
-      <Title className='flex justify-center items-center' level={2} style={{ color: '#0b1b5d' }}>
+      <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
         Từ Điển
       </Title>
       <div className='flex justify-center items-center mb-4'>

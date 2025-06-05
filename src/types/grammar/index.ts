@@ -1,4 +1,5 @@
 export type Example = { type: string; sentence: string };
+
 export interface Tense {
   tense: string;
   name: string;
@@ -10,10 +11,7 @@ export interface Tense {
     negative: string;
     question: string;
   };
-  examples: {
-    type: string;
-    sentence: string;
-  }[];
+  examples: Example[];
   usage: {
     title: string;
     examples: {

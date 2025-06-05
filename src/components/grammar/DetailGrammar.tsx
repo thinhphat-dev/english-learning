@@ -17,23 +17,23 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
     const selectedItem = grammarData.find((item) => item.type === grammarType?.slice(0, -1));
     setSelectedGrammar(selectedItem);
   }, [grammarType]);
+
   if (!selectedGrammar) {
     return <div className='text-center text-gray-500 p-6'>Vui lòng chọn một loại ngữ pháp để xem chi tiết.</div>;
   }
+
   return (
     <div className='p-6 w-full mx-auto bg-gradient-to-r bg-white to-indigo-100 rounded-lg shadow-xl'>
       <Title level={3}>
         {selectedGrammar.title_vn}
         <span className='block sm:inline text-c-main-color'> ( {selectedGrammar.type} )</span>
       </Title>
-
       <Card bordered={false} className='mb-6 shadow-lg rounded-xl bg-white'>
         <Divider className='custom-divider-color'>
           <div className='text-c-sec-color font-bold'>Định nghĩa</div>
         </Divider>
         <Text className='text-gray-700 leading-relaxed'>{selectedGrammar.definition}</Text>
       </Card>
-
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-4'>
         <div>
           <Divider className='custom-divider-color'>
@@ -64,7 +64,6 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
           <Divider className='custom-divider-color'>
             <div className='text-c-sec-color font-bold'>Ví dụ minh họa</div>
           </Divider>
-
           <Card bordered={false} className='mb-6 shadow-lg rounded-xl bg-white'>
             <List
               itemLayout='vertical'
@@ -90,7 +89,6 @@ const GrammarDetailCard = ({ grammarType }: Props) => {
           </Card>
         </div>
       </div>
-
       <Card bordered={false} className='mb-6 shadow-lg rounded-xl bg-white'>
         <Divider className='custom-divider-color'>
           <div className='text-c-sec-color font-bold'>Dấu hiệu nhận biết</div>

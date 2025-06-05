@@ -6,6 +6,7 @@ export type PasswordInputProps = {
   classNameInput?: string;
   dependencies?: string[];
 } & CommonInputProps;
+
 export const PasswordInput = ({
   formItemName,
   label,

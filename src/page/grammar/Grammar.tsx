@@ -44,7 +44,6 @@ export default function GrammarPage() {
       <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
         Ngữ Pháp Tiếng Anh
       </Title>
-
       <div className='flex flex-col md:flex-row gap-4'>
         <Select
           placeholder='Loại ngữ pháp'

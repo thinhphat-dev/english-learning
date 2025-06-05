@@ -1,4 +1,4 @@
-import { Layout, theme, Grid, Drawer, Button } from 'antd';
+import { Layout, Grid, Drawer, Button } from 'antd';
 import { useState } from 'react';
 import { Outlet } from 'react-router';
 import { MenuOutlined } from '@ant-design/icons';
@@ -14,16 +14,13 @@ const MainLayout = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const screens = useBreakpoint();
   const isMobile = !screens.sm;
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
 
   return (
     <div className='h-screen overflow-hidden'>
       <Layout className='h-full bg-zinc-100'>
         {!isMobile && <CSider collapsed={collapsed} setCollapsed={setCollapsed} />}
         <div className='fixed top-0 left-0 right-0 z-10'>
-          <CHeader bg={colorBgContainer} />
+          <CHeader />
           {isMobile && (
             <Button
               icon={<MenuOutlined />}
@@ -32,13 +29,7 @@ const MainLayout = () => {
             />
           )}
         </div>
-        <Drawer
-          title='Menu'
-          placement='left'
-          width={200}
-          closable
-          onClose={() => setDrawerVisible(false)}
-          open={drawerVisible}>
+        <Drawer title='Menu' placement='left' width={200} closable onClose={() => setDrawerVisible(false)} open={drawerVisible}>
           <CSider collapsed={false} setCollapsed={() => {}} />
         </Drawer>
         <Content

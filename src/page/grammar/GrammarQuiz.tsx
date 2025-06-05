@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Select, Card, Typography } from 'antd';
-import QuizData from '@/constans/database/grammar-quiz-data.json'; 
+import QuizData from '@/constans/database/grammar-quiz-data.json';
 import QuizCard from '@/components/card/QuizCard';
 import type { GrammarQuizItem } from '@/types/Exercise/QuizCard.type';
+import { updateQuizProgress } from '@/service/quiz/quiz.service';
+import { useAuthStore } from '@/store/auth.store';
 
 const { Option } = Select;
 const { Title, Text } = Typography;
@@ -16,13 +18,13 @@ const GrammarQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const categories = Array.from(new Set(QuizData.map((item) => item.category)));
-
+  const { currentUser } = useAuthStore();
   const handleCategoryChange = (value: string) => {
     resetQuiz();
     setSelectedCategory(value);
   };
 
-  const handleAnswerSelected = (isCorrect: boolean, selectedOption: string) => {
+  const handleAnswerSelected = async (isCorrect: boolean, selectedOption: string) => {
     setUserAnswers((prevAnswers) => ({
       ...prevAnswers,
       [currentQuestionIndex]: selectedOption,
@@ -42,6 +44,7 @@ const GrammarQuiz = () => {
       });
       setCorrectAnswersCount(finalCorrectCount);
       setShowResult(true);
+      await updateQuizProgress(currentUser?.uid || '', 'grammar', filteredQuestions.length, selectedCategory);
     }
   };
 
@@ -68,7 +71,7 @@ const GrammarQuiz = () => {
   return (
     <div className='min-h-screen bg-gray-100 flex flex-col items-center p-4'>
       <Card className='w-full max-w-2xl shadow-lg rounded-lg p-6 bg-white'>
-        <Title level={2} className='text-center mb-6 text-blue-600'>
+        <Title className='text-center' level={2} style={{ color: '#0b1b5d' }}>
           Trắc Nghiệm Ngữ Pháp
         </Title>
         <div className='mb-6 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4'>

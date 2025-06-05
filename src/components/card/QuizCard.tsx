@@ -37,7 +37,7 @@ const QuizCard = ({ currentQuestion, currentQuestionIndex, totalQuestions, onAns
       <Card className='mb-6 border-2 border-blue-200'>
         <div className='text-center mb-4'>
           <Text type='secondary' className='text-lg'>
-            Question {currentQuestionIndex + 1} of {totalQuestions}
+            Câu {currentQuestionIndex + 1} trên {totalQuestions}
           </Text>
         </div>
         {currentQuestion.photoUrl && (

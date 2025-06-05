@@ -2,7 +2,7 @@ import { auth, db } from '@/config/firebase';
 import type { LoginParams, RegisterParams } from '@/types/request.type';
 import type { UserInfo } from '@/types/response.type';
 import { message } from 'antd';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 
 export const loginWithPassword = async (values: LoginParams) => {
@@ -44,6 +44,15 @@ export const logout = async () => {
   }
 };
 
+export const resetPassword = async (email: string): Promise<void> => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    message.success('Nếu email tồn tại, một liên kết đặt lại mật khẩu đã được gửi. Do không có backend nên không kiểm tra email có trong hệ thống được vì tính bảo mật');
+  } catch (error) {
+    message.error('Lỗi khi gửi email:');
+    throw error;
+  }
+};
 
 export const fetchUserData = async (uid: string): Promise<UserInfo> => {
   const docRef = doc(db, 'users', uid);

@@ -1,7 +1,9 @@
 import { PATH } from '@/config/routers/path';
-import { FileSearchOutlined, HomeOutlined, ReadOutlined } from '@ant-design/icons';
+import { logout } from '@/service/auth/auth.service';
+import { FileSearchOutlined, HomeOutlined, PoweroffOutlined, ReadOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
 import type { JSX } from 'react';
-import type { NavigateFunction } from 'react-router';
+import { Link, type NavigateFunction } from 'react-router';
 
 type MenuItem = {
   key: string;
@@ -25,7 +27,7 @@ export const getMenuList = ({ navigate }: MenuListProps): MenuItem[] => {
     },
     {
       key: PATH.DICTIONARY.PATH + 'a',
-      label: 'Từ Điển',
+      label: 'Từ Vựng',
       icon: <FileSearchOutlined />,
       children: [
         {
@@ -61,6 +63,29 @@ export const getMenuList = ({ navigate }: MenuListProps): MenuItem[] => {
           onClick: () => navigate(PATH.GRAMMAR.QUIZ.PATH),
         },
       ],
+    },
+  ];
+};
+
+export const getDropdownItems = (): MenuProps['items'] => {
+  return [
+    {
+      label: <Link to='/information'>Thông tin cá nhân</Link>,
+      key: 'information',
+    },
+    {
+      type: 'divider',
+    },
+    {
+      key: 'logout',
+      label: (
+        <div
+          onClick={() => logout()}
+          className='flex items-center gap-2 text-red-500 border border-red-500 rounded px-2 py-1 hover:bg-red-500 hover:text-white transition duration-200'>
+          <PoweroffOutlined />
+          <span>Đăng xuất</span>
+        </div>
+      ),
     },
   ];
 };

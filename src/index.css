@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 *{
     font-family: "Roboto", ui-sans-serif, system-ui !important;
 }

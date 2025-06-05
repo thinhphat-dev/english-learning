@@ -12,7 +12,7 @@ const LoginPage = () => {
       <TextInput formItemName='email' label='Email' placeholder='Nhập email' rules={getEmailSchema} />
       <PasswordInput label='Mật Khẩu' formItemName='password' placeholder='Nhập mật khẩu' rules={getPasswordLoginSchema} />
       <div className='w-full mt-[-20px] flex justify-end pb-2'>
-        <a href='#'>Quên Mật Khẩu?</a>
+        <Link to='/forgot-password'>Quên Mật Khẩu?</Link>
       </div>
       <Button className='w-full text-base font-medium' type='primary' htmlType='submit'>
         Đăng Nhập
